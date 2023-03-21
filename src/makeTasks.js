@@ -4,21 +4,16 @@ import format from 'date-fns/format'
 
 
 class tasks {
-    constructor(title, description, ) {
+    constructor(title, description) {
         this.title = title,
         this.description = description
     }
 }
 
-function createTask(date, title, des) {
-    maybeArray.push(new tasks(date, title, des))
-    console.log(maybeArray)
+function createTask(year, month, day, title, description) {
+    const result = format(new Date(year, month, day), 'MM/dd/yyyy')
+    const newObj = new tasks(title, description) 
+    addTask(newObj, result)
 }
 
-const maybeArray = []
-
-const whot = new tasks("Hello there")
-
-function what () {
-    console.log("what")
-}
+createTask("2012", "12", "05", "Welcome to Pyry", "is today the day of reckoning")
