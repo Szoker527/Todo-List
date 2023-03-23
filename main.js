@@ -360,6 +360,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/containers.js":
+/*!***************************!*\
+  !*** ./src/containers.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTask\": () => (/* binding */ addTask)\n/* harmony export */ });\n\n\n\nconst dateArray = [{date: \"21\"},{date: \"22\"},{date:\"17\"}]\n\n\nclass taskContainer {\n    constructor(date, obj) {\n        this.date = date,\n        this.tasks = [obj]\n    }\n    \n    addToContainer() {\n        \n    }\n}\n\nfunction addTask(obj, date) {\n    if(!checkIfContainerExist(date)) {\n        dateArray.push(new taskContainer(date, obj))\n        console.log(dateArray)\n        return\n    }\n    const containerObj = checkIfContainerExist(date);\n    containerObj.tasks.push(obj)\n    console.log(dateArray)\n}\n\nfunction checkIfContainerExist(date) {\n    let containerExists = false;\n    let containerObj;\n\n    dateArray.forEach(function(obj) {\n      if(obj.date === date) {\n        containerExists = true;\n        containerObj = obj;\n      }\n    });\n\n    if(containerExists === false) {\n        return containerExists;\n    } else {\n        return containerObj\n    }\n}\n\nfunction removeObj() {\n\n}\n\nfunction addObj() {\n    \n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/containers.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -370,23 +380,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mak
 
 /***/ }),
 
-/***/ "./src/makeDate.js":
-/*!*************************!*\
-  !*** ./src/makeDate.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTask\": () => (/* binding */ addTask)\n/* harmony export */ });\n/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns/format */ \"./node_modules/date-fns/esm/format/index.js\");\n\n\n\nconst dateArray = [{date: \"21\"},{date: \"22\"},{date:\"17\"}]\n\n\nclass taskContainer {\n    constructor(date, obj) {\n        this.date = date,\n        this.tasks = [obj]\n    }\n    \n    addToContainer() {\n        \n    }\n}\nconst result = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(new Date(2014, 1, 11), 'MM/dd/yyyy')\n\nfunction addTask(obj, date) {\n    if(!checkIfContainerExist(date)) {\n        dateArray.push(new taskContainer(date, obj))\n    }\n    const containerObj = checkIfContainerExist(date);\n    containerObj.tasks.push(obj)\n    console.log(dateArray)\n}\n\nfunction checkIfContainerExist(date) {\n    let containerExists = false;\n    let containerObj;\n\n    dateArray.forEach(function(obj) {\n      if(obj.date === date) {\n        containerExists = true;\n        containerObj = obj;\n      }\n    });\n\n    if(containerExists === false) {\n        return containerExists;\n    } else {\n        return containerObj\n    }\n}\n\n// console.log(checkIfContainerExist(\"15\"))\n\naddTask({whot:21}, \"15\")\naddTask({whot:12}, \"15\")\n\n\n//# sourceURL=webpack://todo-list/./src/makeDate.js?");
-
-/***/ }),
-
 /***/ "./src/makeTasks.js":
 /*!**************************!*\
   !*** ./src/makeTasks.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _makeDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeDate */ \"./src/makeDate.js\");\n/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns/format */ \"./node_modules/date-fns/esm/format/index.js\");\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_makeDate__WEBPACK_IMPORTED_MODULE_0__.addTask);  \n;\n\n\n\nclass tasks {\n    constructor(title, description) {\n        this.title = title,\n        this.description = description\n    }\n}\n\nfunction createTask(year, month, day, title, description) {\n    const result = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(new Date(year, month, day), 'MM/dd/yyyy')\n    const newObj = new tasks(title, description) \n    ;(0,_makeDate__WEBPACK_IMPORTED_MODULE_0__.addTask)(newObj, result)\n}\n\ncreateTask(\"2012\", \"12\", \"05\", \"Welcome to Pyry\", \"is today the day of reckoning\")\n\n\n//# sourceURL=webpack://todo-list/./src/makeTasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./containers */ \"./src/containers.js\");\n/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns/format */ \"./node_modules/date-fns/esm/format/index.js\");\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_containers__WEBPACK_IMPORTED_MODULE_0__.addTask);  \n;\n\n\n\nclass tasks {\n    constructor(mainTopic, subTopic, title, description) {\n        this._mainTopic = mainTopic,\n        this.subTopic = subTopic,\n        this.title = title,\n        this.description = description\n    }\n\n    set topic(topic) {\n        this._mainTopic = topic;\n    }\n}\n\nfunction createTask(date, mainTopic, subTopic, title, description) {\n    const result = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(new Date(date), 'yyyy-MM-dd')\n    const newObj = new tasks(mainTopic, subTopic, title, description) \n    newObj.topic = \"not\"\n    ;(0,_containers__WEBPACK_IMPORTED_MODULE_0__.addTask)(newObj, result)\n}\n\ncreateTask(\"2014 2 12\", \"My Work\", \"Routine\", \"Welcome to Prry\", \"is today the day of reckoning\")\ncreateTask(\"2014 2 12\", \"My Work\", \"Routine\", \"ffffff\", \"aaaaaa\")\n\n//# sourceURL=webpack://todo-list/./src/makeTasks.js?");
 
 /***/ })
 
