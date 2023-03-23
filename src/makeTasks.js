@@ -1,5 +1,5 @@
 export default addTask  
-import {addTask} from "./containers"
+import {addTask, findTopic} from "./containers"
 import format from 'date-fns/format'
 
 
@@ -19,9 +19,13 @@ class tasks {
 function createTask(date, mainTopic, subTopic, title, description) {
     const result = format(new Date(date), 'yyyy-MM-dd')
     const newObj = new tasks(mainTopic, subTopic, title, description) 
-    newObj.topic = "not"
+    // newObj.topic = "not"
     addTask(newObj, result)
 }
 
 createTask("2014 2 12", "My Work", "Routine", "Welcome to Prry", "is today the day of reckoning")
+createTask("2014 2 12", "Top Game", "Routine", "ffffff", "aaaaaa")
+createTask("2014 2 12", "Not Work", "Routine", "ffffff", "aaaaaa")
 createTask("2014 2 12", "My Work", "Routine", "ffffff", "aaaaaa")
+
+findTopic("My Work")

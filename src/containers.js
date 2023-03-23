@@ -1,7 +1,7 @@
 import format from 'date-fns/format'
-export {addTask}
+export {addTask, findTopic}
 
-const dateArray = [{date: "21"},{date: "22"},{date:"17"}]
+const dateArray = []
 
 
 class taskContainer {
@@ -44,11 +44,22 @@ function checkIfContainerExist(date) {
     }
 }
 
-function removeObj() {
-
+function findTopic(topic) {
+    const newArray = [];
+    dateArray.forEach(function(obj) {
+        const newobjArray = obj.tasks
+        for (let i = 0; i < newobjArray.length; i++) {
+            const newobj = newobjArray[i]
+            if(newobj._mainTopic === topic) {
+                newArray.push(newobj)
+            }
+        }
+       
+    });
+    console.log(newArray)
 }
 
 function addObj() {
-    
+
 }
 
