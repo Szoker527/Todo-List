@@ -14,11 +14,12 @@ class taskContainer {
         
     }
 }
-const result = format(new Date(2014, 1, 11), 'MM/dd/yyyy')
 
 function addTask(obj, date) {
     if(!checkIfContainerExist(date)) {
         dateArray.push(new taskContainer(date, obj))
+        console.log(dateArray)
+        return
     }
     const containerObj = checkIfContainerExist(date);
     containerObj.tasks.push(obj)
@@ -43,7 +44,11 @@ function checkIfContainerExist(date) {
     }
 }
 
-// console.log(checkIfContainerExist("15"))
+function removeObj() {
 
-addTask({whot:21}, "15")
-addTask({whot:12}, "15")
+}
+
+function addObj() {
+    
+}
+

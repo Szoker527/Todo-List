@@ -1,4 +1,5 @@
 const path = require('path');
+import { supportedLocales } from './config.js'
 
 module.exports = {
     mode: 'development',    
@@ -15,4 +16,10 @@ module.exports = {
           },
         ],
       },
+      plugins: [
+        new webpack.ContextReplacementPlugin(
+          /^date-fns[/\\]locale$/,
+          new RegExp(`\\.[/\\\\](${supportedLocales.join('|')})[/\\\\]index\\.js$`)
+        )
+      ]
 };

@@ -1,19 +1,27 @@
 export default addTask  
-import {addTask} from "./makeDate"
+import {addTask} from "./containers"
 import format from 'date-fns/format'
 
 
 class tasks {
-    constructor(title, description) {
+    constructor(mainTopic, subTopic, title, description) {
+        this._mainTopic = mainTopic,
+        this.subTopic = subTopic,
         this.title = title,
         this.description = description
     }
+
+    set topic(topic) {
+        this._mainTopic = topic;
+    }
 }
 
-function createTask(year, month, day, title, description) {
-    const result = format(new Date(year, month, day), 'MM/dd/yyyy')
-    const newObj = new tasks(title, description) 
+function createTask(date, mainTopic, subTopic, title, description) {
+    const result = format(new Date(date), 'yyyy-MM-dd')
+    const newObj = new tasks(mainTopic, subTopic, title, description) 
+    newObj.topic = "not"
     addTask(newObj, result)
 }
 
-createTask("2012", "12", "05", "Welcome to Pyry", "is today the day of reckoning")
+createTask("2014 2 12", "My Work", "Routine", "Welcome to Prry", "is today the day of reckoning")
+createTask("2014 2 12", "My Work", "Routine", "ffffff", "aaaaaa")
