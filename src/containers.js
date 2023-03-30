@@ -1,5 +1,5 @@
 import format from 'date-fns/format'
-export {addTask, findTopic}
+export {addTask, findTopic, findDateArray}
 
 const dateArray = []
 
@@ -59,7 +59,15 @@ function findTopic(topic) {
     console.log(newArray)
 }
 
-function addObj() {
-
+function findDateArray(date) {
+    const newArray = [];
+    dateArray.forEach(function(obj) {
+        const newobjArray = obj.date
+        if(newobjArray === date) {
+                newArray.push(obj.tasks)
+        }
+       
+    });
+    console.log(newArray)
 }
 
