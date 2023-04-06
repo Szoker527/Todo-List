@@ -1,6 +1,6 @@
 import currentDate from "../functions/dates"
 
-function page() {
+function todayPage() {
     const menu = document.querySelector(".menu")
     const contentContainer = document.createElement("div")
     contentContainer.classList.add("content-menu")
@@ -19,4 +19,4 @@ function page() {
     menu.appendChild(contentContainer)
 }
 
-export default page
+export default todayPage

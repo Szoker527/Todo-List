@@ -25,6 +25,13 @@ main {
 
 .left-menu {
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30%;
+  font-weight: bold;
+  font-size: 20px;
+  gap: 10px;
+  
 }
 
 .menu {
