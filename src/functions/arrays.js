@@ -1,17 +1,13 @@
 import format from 'date-fns/format'
 export {addTask, findTopic, findDateArray}
+// Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
-
 
 class taskContainer {
     constructor(date, obj) {
         this.date = date,
         this.tasks = [obj]
-    }
-    
-    addToContainer() {
-        
     }
 }
 

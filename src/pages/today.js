@@ -1,5 +1,4 @@
-export default page
-import { currentDate } from "./makeTasks"
+import currentDate from "../functions/dates"
 
 function page() {
     const menu = document.querySelector(".menu")
@@ -20,4 +19,4 @@ function page() {
     menu.appendChild(contentContainer)
 }
 
-page()
+export default page
