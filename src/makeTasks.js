@@ -1,5 +1,6 @@
 export default addTask  
-import {addTask, findDateArray, findTopic} from "./containers"
+export {currentDate}
+import {addTask, findDateArray, findTopic} from "./arrays"
 import format from 'date-fns/format'
 
 
@@ -22,6 +23,12 @@ function createTask(date, mainTopic, subTopic, title, description) {
     // newObj.topic = "not"
     console.log(result)
     addTask(newObj, result)
+}
+
+function currentDate() {
+    const currentDate = new Date();
+    const formattedDate = format(currentDate, 'EEEE, MMMM do, yyyy');
+    return formattedDate;
 }
 
 createTask("2014 2 12", "My Work", "Routine", "Welcome to Prry", "is today the day of reckoning")
