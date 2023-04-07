@@ -1,3 +1,4 @@
+import project from "../functions/projects"
 
 function menu() {
     const today = document.createElement("div")
@@ -11,6 +12,7 @@ function menu() {
 
     leftMenu.appendChild(today)
     leftMenu.appendChild(upcoming)
+    project()
 }
 
 export default menu

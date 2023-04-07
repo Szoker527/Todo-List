@@ -1,5 +1,5 @@
 import format from 'date-fns/format'
-export {addTask, findTopic, findDateArray}
+export {addTask, findTopic, findDateArray, displayAllTopics}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
@@ -67,3 +67,15 @@ function findDateArray(date) {
     console.log(newArray)
 }
 
+function displayAllTopics() {
+    const newArray = [];
+    dateArray.forEach(function(obj) {
+        const newobjArray = obj.tasks
+        for (let i = 0; i < newobjArray.length; i++) {
+            const newobj = newobjArray[i]
+            newArray.push(newobj._mainTopic)
+        }
+       
+    });
+    return newArray
+}

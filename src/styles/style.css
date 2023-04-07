@@ -27,11 +27,11 @@ main {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  padding: 60px 30%;
   font-weight: bold;
   font-size: 20px;
-  gap: 10px;
-  
+  gap: 20px;
+  padding-left: 30px;
+  padding-top: 50px;
 }
 
 .menu {
@@ -53,4 +53,25 @@ main {
 
 .today-title h3 {
   color: #c0bdbd;
+}
+
+.today-page {
+  font-size: 25px;
+}
+
+.upcoming-page {
+  font-size: 25px;
+}
+
+.projects {
+}
+
+.project-title {
+  font-size: 25px;
+}
+
+.project-topics {
+  font-size: 20px;
+  padding-left: 5px;
+  padding-top: 10px;
 }
