@@ -1,5 +1,6 @@
+import home from "./pages/home"
 import todayPage from "./pages/today"
-import upcoming from "./pages/upcoming"
+import Week from "./pages/upcoming"
 import firstLoad from "./functions/firstLoad"
 import render from "./functions/render"
 import style from "./styles/style.css"
@@ -11,8 +12,15 @@ createTask("2014 01 04", "Relax", "night", "Play games", "xxxxxxxxxxxxxxxxx")
 createTask("2014 03 05", "Relax", "wwww", "dsdsds", "xxxxxxxxxxxxxxxxx")
 firstLoad()
 
+const homeBtn = document.querySelector(".home-page")
 const todayBtn = document.querySelector(".today-page")
-const upcomingBtn = document.querySelector(".upcoming-page")
+const weekBtn = document.querySelector(".upcoming-page")
+
+homeBtn.addEventListener("click", function() {
+    render()
+    home()
+    console.log("home")
+})
 
 todayBtn.addEventListener("click", function() {
     render()
@@ -20,9 +28,9 @@ todayBtn.addEventListener("click", function() {
     console.log("today")
 })
 
-upcomingBtn.addEventListener("click", function() {
+weekBtn.addEventListener("click", function() {
     render()
-    upcoming()
-    console.log("upcoming")
+    Week()
+    console.log("week")
 })
 

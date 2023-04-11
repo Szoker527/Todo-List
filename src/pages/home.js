@@ -1,6 +1,6 @@
 import currentDate from "../functions/dates"
 
-function Week() {
+function home() {
     const menu = document.querySelector(".menu")
     const contentContainer = document.createElement("div")
     contentContainer.classList.add("content-menu")
@@ -11,7 +11,7 @@ function Week() {
     todayTitle.classList.add("today-title")
 
     todayDateSub.textContent = currentDate()
-    todayDate.textContent = "Week"
+    todayDate.textContent = "Home"
 
     todayTitle.appendChild(todayDate)
     todayTitle.appendChild(todayDateSub)
@@ -19,4 +19,4 @@ function Week() {
     menu.appendChild(contentContainer)
 }
 
-export default Week
+export default home
