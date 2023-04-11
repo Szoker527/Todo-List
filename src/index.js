@@ -1,6 +1,7 @@
 import home from "./pages/home"
 import todayPage from "./pages/today"
-import Week from "./pages/upcoming"
+import Week from "./pages/week"
+import notes from "./pages/notes"
 import firstLoad from "./functions/firstLoad"
 import render from "./functions/render"
 import style from "./styles/style.css"
@@ -15,6 +16,7 @@ firstLoad()
 const homeBtn = document.querySelector(".home-page")
 const todayBtn = document.querySelector(".today-page")
 const weekBtn = document.querySelector(".upcoming-page")
+const notesBtn = document.querySelector(".notes-page")
 
 homeBtn.addEventListener("click", function() {
     render()
@@ -32,5 +34,11 @@ weekBtn.addEventListener("click", function() {
     render()
     Week()
     console.log("week")
+})
+
+notesBtn.addEventListener("click", function() {
+    render()
+    notes()
+    console.log("notes")
 })
 

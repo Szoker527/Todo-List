@@ -62,15 +62,10 @@ main {
   color: #c0bdbd;
 }
 
-.home-page {
-  font-size: 40px;
-}
-
-.today-page {
-  font-size: 40px;
-}
-
-.upcoming-page {
+.home-page,
+.today-page,
+.upcoming-page,
+.notes-page {
   font-size: 40px;
 }
 
