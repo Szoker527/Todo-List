@@ -2,6 +2,7 @@ import modal from "../styles/modal.css"
 import toDoModal from "./modalPages/toDoModal"
 import projectModal from "./modalPages/projectModal"
 import noteModal from "./modalPages/noteModal"
+import { firstLoadModal } from "../functions/firstLoad"
 
 function modalPage() {
     const body = document.querySelector("body")
@@ -10,7 +11,7 @@ function modalPage() {
     const header = document.createElement("div")
     const headerTitle = document.createElement("div")
     const leftMenu = document.createElement("div")
-    const displayMenu = document.createElement("div")
+    const displayMenu = document.createElement("form")
     const span = document.createElement("span")
 
     myModal.classList.add("modal")
@@ -18,7 +19,8 @@ function modalPage() {
     header.classList.add("header", "header-small")
     headerTitle.classList.add("header-title")
     leftMenu.classList.add("left-menu", "left-menu-small")
-    displayMenu.classList.add("display-menu")
+    displayMenu.classList.add("display-menu", "display-menu-small")
+    addForm(displayMenu)
     span.classList.add("close")
 
 
@@ -33,6 +35,7 @@ function modalPage() {
     header.appendChild(headerTitle)
     header.appendChild(span)
     menuModal()
+    firstLoadModal()
 }
 
 function menuModal() {
@@ -53,4 +56,9 @@ function menuModal() {
     leftMenuSmall.appendChild(project)
     leftMenuSmall.appendChild(note)
 }
+
+function addForm(form) {
+    form.setAttribute('id', 'myForm');
+}
+
 export default modalPage

@@ -77,10 +77,14 @@ body {
 }
 
 .display-menu {
-  display: flex;
-  justify-content: center;
+  display: grid;
 }
- 
+
+.display-menu-small {
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px 50px;
+}
+
 .content-menu {
   margin: 50px 0;
   width: 45%;
