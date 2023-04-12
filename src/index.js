@@ -4,7 +4,9 @@ import Week from "./pages/week"
 import notes from "./pages/notes"
 import firstLoad from "./functions/firstLoad"
 import render from "./functions/render"
+import modalPage from "./pages/modal"
 import style from "./styles/style.css"
+import modal from "./styles/modal.css"
 import { createTask } from "./functions/tasks"
 
 
@@ -17,6 +19,7 @@ const homeBtn = document.querySelector(".home-page")
 const todayBtn = document.querySelector(".today-page")
 const weekBtn = document.querySelector(".upcoming-page")
 const notesBtn = document.querySelector(".notes-page")
+const addBtn = document.querySelector(".add-btn")
 
 homeBtn.addEventListener("click", function() {
     render()
@@ -42,3 +45,20 @@ notesBtn.addEventListener("click", function() {
     console.log("notes")
 })
 
+addBtn.addEventListener("click", function() {
+    modalPage()
+
+    const modal = document.querySelector(".modal");
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+})
