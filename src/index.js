@@ -6,7 +6,6 @@ import firstLoad from "./functions/firstLoad"
 import render from "./functions/render"
 import modalPage from "./pages/modal"
 import style from "./styles/style.css"
-import modal from "./styles/modal.css"
 import { createTask } from "./functions/tasks"
 
 

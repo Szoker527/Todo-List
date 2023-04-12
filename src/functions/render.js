@@ -1,5 +1,5 @@
 function render() {
-    const menuContainer = document.querySelector(".menu")
+    const menuContainer = document.querySelector(".display-menu")
     while (menuContainer.firstChild) {
         menuContainer.removeChild(menuContainer.firstChild);
       }

@@ -1,7 +1,7 @@
 import currentDate from "../functions/dates"
 
 function todayPage() {
-    const menu = document.querySelector(".menu")
+    const menu = document.querySelector(".display-menu")
     const contentContainer = document.createElement("div")
     contentContainer.classList.add("content-menu")
     const todayTitle = document.createElement("div")
