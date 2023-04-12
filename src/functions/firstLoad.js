@@ -1,8 +1,8 @@
-import todayPage from "../pages/today"
+import home from "../pages/home"
 import menu from "../pages/menu"
 
 function firstLoad() {
-    todayPage()
+    home()
     menu()
 }
 
