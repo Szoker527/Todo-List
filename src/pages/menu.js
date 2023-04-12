@@ -8,10 +8,10 @@ function menu() {
     const notes = document.createElement("div")
     const btnAdd = document.createElement("button")
     const leftMenu = document.querySelector(".left-menu")
-    home.classList.add("home-page")
-    today.classList.add("today-page")
-    week.classList.add("upcoming-page")
-    notes.classList.add("notes-page")
+    home.classList.add("home-page", "left-menu-title")
+    today.classList.add("today-page", "left-menu-title")
+    week.classList.add("upcoming-page", "left-menu-title")
+    notes.classList.add("notes-page", "left-menu-title")
     btnAdd.classList.add("add-btn")
 
     home.textContent = "Home"
