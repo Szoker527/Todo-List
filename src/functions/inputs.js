@@ -13,8 +13,12 @@ function inputDetails() {
 
 }
 
-function inputBtn() {
-
+function inputBtn(parent) {
+    const submitBtn = document.createElement("button")
+    parent.appendChild(submitBtn)
+    submitBtn.textContent = "Submit"
+    submitBtn.setAttribute("type", "submit")
+    submitBtn.setAttribute("id", "submit-button")
 }
 
 export {inputTitle, inputDetails, inputBtn}

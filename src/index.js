@@ -49,7 +49,8 @@ addBtn.addEventListener("click", function() {
     modalPage()
 
     const modal = document.querySelector(".modal");
-
+    const form = document.querySelector('#myForm');
+    const formTitle = document.querySelector('#input-title');
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
 
@@ -60,5 +61,11 @@ addBtn.addEventListener("click", function() {
     span.onclick = function() {
         modal.style.display = "none";
     }
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        modal.style.display = 'none';
+        createTask("2014 03 05", formTitle.value, "wwww", "dsdsds", "xxxxxxxxxxxxxxxxx")
+      });
 
 })
