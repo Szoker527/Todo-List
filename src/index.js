@@ -3,7 +3,7 @@ import todayPage from "./pages/today"
 import Week from "./pages/week"
 import notes from "./pages/notes"
 import firstLoad from "./functions/firstLoad"
-import render from "./functions/render"
+import {render, renderModal} from "./functions/render"
 import modalPage from "./pages/modal"
 import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
@@ -45,6 +45,7 @@ notesBtn.addEventListener("click", function() {
 })
 
 addBtn.addEventListener("click", function() {
+    renderModal()
     modalPage()
 
     const modal = document.querySelector(".modal");
