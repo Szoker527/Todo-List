@@ -1,5 +1,5 @@
 export {createTask}
-import {addTask, findProjectTitles} from "./arrays"
+import {addTask} from "./arrays"
 import format from 'date-fns/format'
 // Here are tasks functions that create tasks objects
 

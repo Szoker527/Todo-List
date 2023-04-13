@@ -13,11 +13,11 @@ function inputDetails() {
 
 }
 
-function inputBtn(parent, css) {
+function inputBtn(parent, cssClass, name) {
     const submitBtn = document.createElement("button")
     parent.appendChild(submitBtn)
-    submitBtn.textContent = "Submit"
-    submitBtn.setAttribute("class", `${css}`)
+    submitBtn.textContent = `${name}`
+    submitBtn.setAttribute("class", `${cssClass}`)
     submitBtn.setAttribute("type", "submit")
     submitBtn.setAttribute("id", "submit-button")
 }

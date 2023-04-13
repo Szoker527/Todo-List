@@ -34,3 +34,49 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .display-menu-small-todo {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 50px 50px;
+  }
+
+  .title-input {
+    grid-column: 1 / -1;
+  }
+
+  .bottom-btn-todo-date {
+    display: flex;
+    align-items: center;
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    gap: 10px;
+  }
+
+  .date-button {
+    padding: 9px 37px;
+  }
+
+  .bottom-btn-todo-prio,
+  .bottom-btn-todo-subm {
+    grid-row: 4 / 5;
+    display: flex;
+    align-items: center;
+  }
+
+  .bottom-btn-todo-prio {
+    gap: 10px;
+    padding: 11px 0px;
+  }
+
+  .bottom-btn-todo-prio button {
+    padding: 8px 15px;
+  }
+
+  .bottom-btn-todo-subm {
+    justify-content: flex-end;
+    padding: 7px 0px;
+  }
+
+  .bottom-btn-todo-subm button {
+    padding: 15px 32px;
+  }
