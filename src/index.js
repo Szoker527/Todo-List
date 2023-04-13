@@ -9,9 +9,9 @@ import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
 
 
-createTask("2014 02 03", "Work", "morning", "What to do", "wdadadadadaada")
-createTask("2014 01 04", "Relax", "night", "Play games", "xxxxxxxxxxxxxxxxx")
-createTask("2014 03 05", "Relax", "wwww", "dsdsds", "xxxxxxxxxxxxxxxxx")
+createTask("2014 02 03", "Work", "What to do", "wdadadadadaada")
+createTask("2014 01 04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx")
+createTask("2014 03 05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx")
 firstLoad()
 
 const homeBtn = document.querySelector(".home-page")
@@ -65,7 +65,7 @@ addBtn.addEventListener("click", function() {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         modal.style.display = 'none';
-        createTask("2014 03 05", formTitle.value, "wwww", "dsdsds", "xxxxxxxxxxxxxxxxx")
+        createTask("2014 03 05", formTitle.value, "dsdsds", "xxxxxxxxxxxxxxxxx")
       });
 
 })

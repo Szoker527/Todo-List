@@ -1,5 +1,5 @@
 import format from 'date-fns/format'
-export {addTask, findTopic, findDateArray, displayAllTopics}
+export {addTask, findProjectTitles, findDateArray, displayAllProjectTitles}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
@@ -40,13 +40,13 @@ function checkIfContainerExist(date) {
     }
 }
 
-function findTopic(topic) {
+function findProjectTitles(projectName) {
     const newArray = [];
     dateArray.forEach(function(obj) {
         const newobjArray = obj.tasks
         for (let i = 0; i < newobjArray.length; i++) {
             const newobj = newobjArray[i]
-            if(newobj._mainTopic === topic) {
+            if(newobj.project === projectName) {
                 newArray.push(newobj)
             }
         }
@@ -67,13 +67,13 @@ function findDateArray(date) {
     console.log(newArray)
 }
 
-function displayAllTopics() {
+function displayAllProjectTitles() {
     const newArray = [];
     dateArray.forEach(function(obj) {
         const newobjArray = obj.tasks
         for (let i = 0; i < newobjArray.length; i++) {
             const newobj = newobjArray[i]
-            newArray.push(newobj._mainTopic)
+            newArray.push(newobj.project)
         }
        
     });

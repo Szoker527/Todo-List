@@ -80,7 +80,7 @@ body {
   display: grid;
 }
 
-.display-menu-small {
+.display-menu-small-todo {
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr 50px 50px;
 }

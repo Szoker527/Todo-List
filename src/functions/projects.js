@@ -1,4 +1,4 @@
-import { displayAllTopics } from "./arrays"
+import { displayAllProjectTitles } from "./arrays"
 
 function project() {
     const leftMenu = document.querySelector(".left-menu")
@@ -25,7 +25,7 @@ function project() {
 }
 
 function filterTopic() {
-    const arrayTopic = displayAllTopics()
+    const arrayTopic = displayAllProjectTitles()
     
     const uniqueArray = arrayTopic.filter((item, index) => {
         return arrayTopic.indexOf(item) === index;
