@@ -77,9 +77,11 @@ body {
 }
 
 .display-menu {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* flex-direction: column; */
   padding: 20px;
+  grid-template-rows: repeat(auto-fit, minmax(0px, 60px));
+  gap: 10px;
 }
 
 .display-menu-small {
@@ -113,6 +115,10 @@ body {
 }
 .display-menu-priority-high {
   background-color: red;
+}
+
+.tasks-obj-detail {
+  padding: 6px 12px;
 }
 /* end */
 

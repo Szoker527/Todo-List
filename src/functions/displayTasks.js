@@ -39,9 +39,10 @@ function createTaskLook(priority, title, date, parent) {
     parent.appendChild(objPriority)
     inputType("tasks-obj-check", "check-1", parent, "checkbox")
     parent.appendChild(objTitle)
+    inputType("tasks-obj-detail", "check-2", parent, "button")
     parent.appendChild(objDate)
-    inputType("tasks-obj-btn", "check-2", parent, "button")
     inputType("tasks-obj-btn", "check-3", parent, "button")
+    inputType("tasks-obj-btn", "check-4", parent, "button")
 }
 
 export default displayTasks
