@@ -89,7 +89,32 @@ body {
 
 .display-menu-obj {
   display: flex;
+  padding: 10px;
+  border: solid black 1px;
+  gap: 50px;
 }
+
+/* menu tasks obj  */
+.tasks-obj-btn {
+  padding: 6px 12px;
+}
+
+.display-menu-priority-low,
+.display-menu-priority-medium,
+.display-menu-priority-high {
+  width: 17px;
+  height: 100%;
+}
+.display-menu-priority-low {
+  background-color: green;
+}
+.display-menu-priority-medium {
+  background-color: orange;
+}
+.display-menu-priority-high {
+  background-color: red;
+}
+/* end */
 
 .content-menu {
   margin: 50px 0;
