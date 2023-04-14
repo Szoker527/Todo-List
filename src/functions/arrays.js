@@ -65,7 +65,7 @@ function findDateArray(date) {
         }
        
     });
-    console.log(newArray)
+    return newArray
 }
 
 function displayAllProjectTitles() {

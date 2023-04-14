@@ -1,17 +1,22 @@
 import { addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray } from "./arrays"
 import { inputType } from "./inputs"
+import { format } from "date-fns";
 
 function displayTasks(parent, topic) {
     let arrayTopic;
     if (topic === "allTasks") {
         arrayTopic = dateArray
     }
+    if (topic === "todayTasks") {
+        const today = new Date();
+        const formattedDate = format(today, 'yyyy-MM-dd');
+        arrayTopic = findDateArray(formattedDate)
+    }
 
     arrayTopic.forEach(function(obj) {
         const objContainer = document.createElement("div")
         objContainer.classList.add("display-menu-obj")
         parent.appendChild(objContainer)
-        console.log( objContainer)
         createTaskLook(obj.priority, obj.title, obj.date, objContainer)
     });
 }
