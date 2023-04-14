@@ -10,8 +10,14 @@ function inputTitle(cssClass, idName, parent, placeholder) {
 
 }
 
-function inputDetails() {
-
+function inputType(cssClass, idName, parent, type) {
+    const inputTitle = document.createElement("input")
+    inputTitle.classList.add(`${cssClass}`)
+    parent.appendChild(inputTitle)
+    inputTitle.setAttribute("type", `${type}`)
+    inputTitle.setAttribute("name", `${idName}`)
+    inputTitle.setAttribute("id", `${idName}`)
+    inputTitle.setAttribute("required", "true")
 }
 
 function inputBtn(parent, cssClass, name) {
@@ -23,4 +29,4 @@ function inputBtn(parent, cssClass, name) {
     submitBtn.setAttribute("id", "submit-button")
 }
 
-export {inputTitle, inputDetails, inputBtn}
+export {inputTitle, inputType, inputBtn}

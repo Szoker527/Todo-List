@@ -77,11 +77,18 @@ body {
 }
 
 .display-menu {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .display-menu-small {
+  display: grid;
   padding: 20px;
+}
+
+.display-menu-obj {
+  display: flex;
 }
 
 .content-menu {
