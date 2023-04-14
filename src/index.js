@@ -9,9 +9,9 @@ import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
 
 
-createTask("2014 02 03", "Work", "What to do", "wdadadadadaada")
-createTask("2014 01 04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx")
-createTask("2014 03 05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx")
+createTask("2014 02 03", "Work", "What to do", "wdadadadadaada", "low")
+createTask("2014 01 04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx", "low")
+createTask("2014 03 05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "low")
 firstLoad()
 
 const homeBtn = document.querySelector(".home-page")

@@ -17,7 +17,7 @@ function home() {
     // todayTitle.appendChild(todayDateSub)
     // contentContainer.appendChild(todayTitle)
     // menu.appendChild(contentContainer)
-    displayTasks(menu)
+    displayTasks(menu, "allTasks")
 }
 
 export default home
