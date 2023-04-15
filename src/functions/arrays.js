@@ -1,5 +1,7 @@
 import format from 'date-fns/format'
-export {addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray}
+import addDays from 'date-fns/addDays'
+export {addTask, findProjectTitles, findDateArray,
+     displayAllProjectTitles, dateArray, nextWeek}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
@@ -24,7 +26,6 @@ const dateArray = []
 
     function addTask(obj) {
         dateArray.push(obj)
-        console.log(dateArray)
     }
 
 // function checkIfContainerExist(date) {
@@ -75,4 +76,20 @@ function displayAllProjectTitles() {
     
     });
     return newArray
+}
+
+function nextWeek() {
+    const today = new Date();
+    const nextSevenDays = [...Array(7)].map((_, i) => addDays(today, i));
+    const weekArray = [];
+    nextSevenDays.forEach((date, i) => {
+      const nextDay = `${format(date, 'yyyy-MM-dd')}`
+      dateArray.forEach(function(obj) {
+        const newobjArray = obj.date
+        if(newobjArray === nextDay) {
+            weekArray.push(obj)
+        }    
+    });
+    });
+    return weekArray
 }

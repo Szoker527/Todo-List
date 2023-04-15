@@ -1,5 +1,5 @@
 export {createTask}
-import {addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray} from "./arrays"
+import {addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray, nextWeek} from "./arrays"
 import format from 'date-fns/format'
 // Here are tasks functions that create tasks objects
 
@@ -17,5 +17,6 @@ function createTask(date, project, title, description, priority) {
     // const result = format(new Date(date), 'yyyy-MM-dd')
     const newObj = new tasks(project, title, description, priority, date) 
     addTask(newObj)
+    nextWeek()
 }
 

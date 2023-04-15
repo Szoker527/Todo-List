@@ -1,4 +1,5 @@
-import { addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray } from "./arrays"
+import { addTask, findProjectTitles, findDateArray, 
+    displayAllProjectTitles, dateArray, nextWeek } from "./arrays"
 import { inputType } from "./inputs"
 import { format } from "date-fns";
 
@@ -12,6 +13,9 @@ function displayTasks(parent, topic) {
         const formattedDate = format(today, 'yyyy-MM-dd');
         arrayTopic = findDateArray(formattedDate)
     }
+    if (topic === "weekTasks") {
+        arrayTopic = nextWeek()
+    }
 
     arrayTopic.forEach(function(obj) {
         const objContainer = document.createElement("div")
@@ -19,6 +23,7 @@ function displayTasks(parent, topic) {
         parent.appendChild(objContainer)
         createTaskLook(obj.priority, obj.title, obj.date, objContainer)
     });
+    
 }
 
 function createTaskLook(priority, title, date, parent) {

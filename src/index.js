@@ -9,10 +9,12 @@ import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
 
 
-createTask("2014 02 03", "Work", "What to do", "wdadadadadaada", "low")
-createTask("2014 01 04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx", "medium")
-createTask("2014 03 05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2014-02-03", "Work", "What to do", "wdadadadadaada", "low")
+createTask("2014-01-04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx", "medium")
+createTask("2014-03-05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
 createTask("2023-04-14", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2023-04-16", "Relax", "xxxxxx", "gggggg", "low")
+createTask("2023-04-15", "Relax", "xxxxxx", "gggggg", "low")
 firstLoad()
 
 const homeBtn = document.querySelector(".home-page")
@@ -72,6 +74,8 @@ addBtn.addEventListener("click", function() {
         modal.style.display = 'none';
         const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
         createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
+        render()
+        home()
       });
 
 })
