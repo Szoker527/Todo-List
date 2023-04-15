@@ -1,4 +1,4 @@
-import { inputTitle, inputBtn } from "../../functions/inputs"
+import { inputTitle, inputBtn, inputType, inputRadio } from "../../functions/inputs"
 
 function toDoModal() {
     const displayMenu = document.querySelector(".display-menu-small")
@@ -15,16 +15,15 @@ function bottomBtnPriority() {
     const displayMenu = document.querySelector(".display-menu-small")
     const bottomBtns = document.createElement("div")
     const priorityText = document.createElement("div")
-
     bottomBtns.classList.add("bottom-btn-todo-prio")
     displayMenu.appendChild(bottomBtns)
     bottomBtns.appendChild(priorityText)
     priorityText.classList.add("bottom-text-todo-prio")
     priorityText.textContent = "Priority:"
 
-    inputBtn(bottomBtns, "todo-button-low", "LOW")
-    inputBtn(bottomBtns, "todo-button-medium", "MEDIUM")
-    inputBtn(bottomBtns, "todo-button-high", "HIGH")
+    inputRadio(bottomBtns, "todo-button-low", "LOW", "low")
+    inputRadio(bottomBtns, "todo-button-medium", "Medium", "medium")
+    inputRadio(bottomBtns, "todo-button-high", "High", "high")
 }
 
 function bottomBtnSubmit() {
@@ -39,7 +38,7 @@ function bottomBtnSubmit() {
 function dueDateBtn() {
     const displayMenu = document.querySelector(".display-menu-small")
     const dueDate = document.createElement("div")
-    const dateText = document.createElement("div")
+    const dateText = document.createElement("label")
     
     dateText.classList.add("bottom-text-todo-date")
     dateText.textContent = "Due Date:"
@@ -47,7 +46,7 @@ function dueDateBtn() {
     dueDate.classList.add("bottom-btn-todo-date")
     displayMenu.appendChild(dueDate)
     dueDate.appendChild(dateText)
-    inputBtn(dueDate, "date-button", "Submit")
+    inputType("date-button", "date-submit", dueDate, "date")
 }
 
 function whichProject() {

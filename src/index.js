@@ -53,6 +53,9 @@ addBtn.addEventListener("click", function() {
     const form = document.querySelector('#myForm');
     const formTitle = document.querySelector('#input-title');
     const formDescription = document.querySelector('#input-description');
+    const formDateSubmit = document.querySelector('#date-submit');
+    const formPriorityRadio = document.querySelectorAll('input[name="priority"]');
+
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
 
@@ -67,7 +70,8 @@ addBtn.addEventListener("click", function() {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         modal.style.display = 'none';
-        createTask("2014 03 05", formTitle.value, "Welcome to Jackass", formDescription.value , "LOW")
+        const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
+        createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
       });
 
 })

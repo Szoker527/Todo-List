@@ -19,7 +19,7 @@ function modalPage() {
     header.classList.add("header", "header-small")
     headerTitle.classList.add("header-title")
     leftMenu.classList.add("left-menu", "left-menu-small")
-    displayMenu.classList.add("display-menu", "display-menu-small")
+    displayMenu.classList.add("display-menu-small")
     addForm(displayMenu)
     span.classList.add("close")
 

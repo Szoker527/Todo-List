@@ -80,3 +80,24 @@
   .bottom-btn-todo-subm button {
     padding: 15px 32px;
   }
+
+
+  /* Hide the default checkbox */
+input[type="radio"] {
+  display: none;
+}
+
+/* Style the label to look like a button */
+label.radio-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Style the label to look like a button when the checkbox is checked */
+input[type="radio"]:checked + label.radio-button {
+  background-color: blueviolet
+}

@@ -29,4 +29,18 @@ function inputBtn(parent, cssClass, name) {
     submitBtn.setAttribute("id", "submit-button")
 }
 
-export {inputTitle, inputType, inputBtn}
+function inputRadio(parent, idName, labelText, radioValue) {
+    const radioBtn = document.createElement("input")
+    const radioLabel = document.createElement("label")
+    parent.appendChild(radioBtn)
+    parent.appendChild(radioLabel)
+    radioLabel.textContent = labelText
+    radioLabel.setAttribute("class", "radio-button")
+    radioLabel.setAttribute("for", `${idName}`)
+    radioBtn.setAttribute("type", "radio")
+    radioBtn.setAttribute("id", `${idName}`)
+    radioBtn.setAttribute("name", "priority")
+    radioBtn.setAttribute("value", `${radioValue}`)
+}
+
+export {inputTitle, inputType, inputBtn, inputRadio}
