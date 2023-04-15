@@ -1,9 +1,11 @@
 import currentDate from "../functions/dates"
 import displayTasks from "../functions/displayTasks"
+import { nextWeek } from "../functions/arrays"
 
 function Week() {
     const menu = document.querySelector(".display-menu")
-    displayTasks(menu, "weekTasks")
+    const weekArray = nextWeek()
+    displayTasks(menu, "weekTasks", weekArray)
 }
 
 export default Week

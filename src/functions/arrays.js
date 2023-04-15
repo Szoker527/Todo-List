@@ -54,7 +54,7 @@ function findProjectTitles(projectName) {
             }
        
     });
-    console.log(newArray)
+    return newArray
 }
 
 function findDateArray(date) {

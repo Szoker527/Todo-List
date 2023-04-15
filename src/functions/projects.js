@@ -19,6 +19,7 @@ function project() {
         const divTopic = document.createElement("div")
 
         divTopic.classList.add("project-topics")
+        divTopic.setAttribute("id", `${element.toLowerCase()}`)
         divTopic.textContent = `${element}`
         projectContainer.appendChild(divTopic)
     }

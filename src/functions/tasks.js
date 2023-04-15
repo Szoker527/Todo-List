@@ -15,7 +15,7 @@ class tasks {
 
 function createTask(date, project, title, description, priority) {
     // const result = format(new Date(date), 'yyyy-MM-dd')
-    const newObj = new tasks(project, title, description, priority, date) 
+    const newObj = new tasks(project.toLowerCase(), title, description, priority, date) 
     addTask(newObj)
     nextWeek()
 }

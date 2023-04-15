@@ -2,6 +2,7 @@ import home from "./pages/home"
 import todayPage from "./pages/today"
 import Week from "./pages/week"
 import notes from "./pages/notes"
+import projects from "./pages/projectPage"
 import { firstLoad } from "./functions/firstLoad"
 import {render, renderModal} from "./functions/render"
 import modalPage from "./pages/modal"
@@ -20,8 +21,10 @@ firstLoad()
 const homeBtn = document.querySelector(".home-page")
 const todayBtn = document.querySelector(".today-page")
 const weekBtn = document.querySelector(".upcoming-page")
+const projectBtns = document.querySelectorAll('.project-topics');
 const notesBtn = document.querySelector(".notes-page")
 const addBtn = document.querySelector(".add-btn")
+
 
 homeBtn.addEventListener("click", function() {
     render()
@@ -40,6 +43,16 @@ weekBtn.addEventListener("click", function() {
     Week()
     console.log("week")
 })
+
+projectBtns.forEach((project, index) => {
+    if (index >= 0) {
+        project.addEventListener('click', (event) => {
+            render()
+            projects(event.target.id)
+            console.log(`${event.target.id}`)
+      });
+    }
+  });
 
 notesBtn.addEventListener("click", function() {
     render()
