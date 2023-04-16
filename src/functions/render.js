@@ -17,4 +17,12 @@ function renderModal() {
     body.removeChild(menuContainer)
 }
 
-export {render, renderModal}
+function renderForm() {
+  const formContainer = document.querySelector("#myForm")
+  while (formContainer.firstChild) {
+    formContainer.removeChild(formContainer.firstChild);
+  }
+  console.log(formContainer)
+}
+
+export {render, renderModal, renderForm}

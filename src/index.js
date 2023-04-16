@@ -3,9 +3,10 @@ import todayPage from "./pages/today"
 import Week from "./pages/week"
 import notes from "./pages/notes"
 import projects from "./pages/projectPage"
-import { firstLoad } from "./functions/firstLoad"
-import {render, renderModal} from "./functions/render"
+import { firstLoad, firstLoadModal } from "./functions/firstLoad"
+import {render, renderModal, renderForm} from "./functions/render"
 import modalPage from "./pages/modal"
+import projectModal from "./pages/modalPages/projectModal"
 import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
 
@@ -63,32 +64,52 @@ notesBtn.addEventListener("click", function() {
 addBtn.addEventListener("click", function() {
     renderModal()
     modalPage()
+    firstLoadModal()
 
-    const modal = document.querySelector(".modal");
-    const form = document.querySelector('#myForm');
-    const formTitle = document.querySelector('#input-title');
-    const formDescription = document.querySelector('#input-description');
-    const formDateSubmit = document.querySelector('#date-submit');
-    const formPriorityRadio = document.querySelectorAll('input[name="priority"]');
+    // const todoModal = document.querySelector("#todoModal")
+    // const projectMod = document.querySelector("#projectModal")
+    // const noteModal = document.querySelector("#noteModal")
+    // const modal = document.querySelector(".modal");
+    // const form = document.querySelector('#myForm');
+    // const formTitle = document.querySelector('#input-title');
+    // const formDescription = document.querySelector('#input-description');
+    // const formDateSubmit = document.querySelector('#date-submit');
+    // const formPriorityRadio = document.querySelectorAll('input[name="priority"]');
+    // console.log(todoModal)
 
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName("close")[0];
+    // // Get the <span> element that closes the modal
+    // const span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks on the button, open the modal
-    modal.style.display = "flex";
+    // // When the user clicks on the button, open the modal
+    // modal.style.display = "flex";
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+    // // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    //     modal.style.display = "none";
+    // }
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        modal.style.display = 'none';
-        const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
-        createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
-        render()
-        home()
-      });
+    // todoModal.addEventListener("click", function() {
+    //     renderModal()
+    //     modalPage()
+    //     firstLoadModal()
+    //     form.addEventListener('submit', (event) => {
+    //         event.preventDefault();
+    //         modal.style.display = 'none';
+    //         const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
+    //         createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
+    //         render()
+    //         home()
+    //       });
+    // })
+
+    // projectMod.addEventListener("click", function() {
+    //     renderModal()
+    //     modalPage()
+    //     projectModal()
+    // })
+
+
+
+
 
 })

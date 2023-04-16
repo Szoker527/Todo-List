@@ -1,20 +1,56 @@
 import { inputTitle, inputBtn, inputType, inputRadio } from "../../functions/inputs"
+import { render } from "../../functions/render"
+import home from "../home"
+import { createTask } from "../../functions/tasks"
 
 function toDoModal() {
     const displayMenu = document.querySelector(".display-menu-small")
     displayMenu.classList.add("display-menu-small-todo")
+
     inputTitle("title-input", "input-title", displayMenu, "TITLE")
     inputTitle("description-input", "input-description", displayMenu, "Description")
+
     bottomBtnPriority()
     bottomBtnSubmit()
     dueDateBtn()
-    console.log(displayMenu)
+
+    const todoModal = document.querySelector("#todoModal")
+    const projectMod = document.querySelector("#projectModal")
+    const noteModal = document.querySelector("#noteModal")
+    const modal = document.querySelector(".modal");
+    const form = document.querySelector('#myForm');
+    const formTitle = document.querySelector('#input-title');
+    const formDescription = document.querySelector('#input-description');
+    const formDateSubmit = document.querySelector('#date-submit');
+    const formPriorityRadio = document.querySelectorAll('input[name="priority"]');
+    console.log(todoModal)
+    
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    modal.style.display = "flex";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        modal.style.display = 'none';
+        const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
+        createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
+        render()
+        home()
+      });
 }
 
 function bottomBtnPriority() {
     const displayMenu = document.querySelector(".display-menu-small")
     const bottomBtns = document.createElement("div")
     const priorityText = document.createElement("div")
+
     bottomBtns.classList.add("bottom-btn-todo-prio")
     displayMenu.appendChild(bottomBtns)
     bottomBtns.appendChild(priorityText)
@@ -49,8 +85,4 @@ function dueDateBtn() {
     inputType("date-button", "date-submit", dueDate, "date")
 }
 
-function whichProject() {
-    
-
-}
 export default toDoModal

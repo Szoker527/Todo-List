@@ -3,6 +3,7 @@ import toDoModal from "./modalPages/toDoModal"
 import projectModal from "./modalPages/projectModal"
 import noteModal from "./modalPages/noteModal"
 import { firstLoadModal } from "../functions/firstLoad"
+import { renderForm } from "../functions/render"
 
 function modalPage() {
     const body = document.querySelector("body")
@@ -35,7 +36,9 @@ function modalPage() {
     header.appendChild(headerTitle)
     header.appendChild(span)
     menuModal()
-    firstLoadModal()
+    todoSelect()
+    projectSelect()
+    // firstLoadModal()
 }
 
 function menuModal() {
@@ -47,6 +50,10 @@ function menuModal() {
     toDo.classList.add("left-menu-title-small")
     project.classList.add("left-menu-title-small")
     note.classList.add("left-menu-title-small")
+
+    toDo.setAttribute("id", "todoModal")
+    project.setAttribute("id", "projectModal")
+    note.setAttribute("id", "noteModal")
 
     toDo.textContent = "To Do" 
     project.textContent = "Project" 
@@ -61,4 +68,21 @@ function addForm(form) {
     form.setAttribute('id', 'myForm');
 }
 
+function todoSelect() {
+    const todoModal = document.querySelector("#todoModal")
+    todoModal.addEventListener("click", function() {
+        renderForm()
+        toDoModal()
+        console.log(todoModal)
+    })
+}
+
+function projectSelect() {
+    const projectMod = document.querySelector("#projectModal")
+    projectMod.addEventListener("click", function() {
+        renderForm()
+        projectModal()
+        console.log(projectMod)
+    })
+}
 export default modalPage
