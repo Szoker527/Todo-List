@@ -9,7 +9,7 @@ function noteModal() {
     displayMenu.classList.remove('display-menu-small-todo');
 
     inputTitle("title-input-notes", "input-title", displayMenu, "TITLE")
-    inputTitleNotes("description-input-notes", "input-description", displayMenu, "Description", 2, 4)
+    inputTitleNotes("description-input-notes", "input-description", displayMenu, "Description")
     bottomBtnSubmit()
 
     const modal = document.querySelector(".modal");
