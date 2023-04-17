@@ -43,7 +43,7 @@ function bottomBtnSubmit() {
 
     bottomBtns.classList.add("bottom-btn-note-submit")
     displayMenu.appendChild(bottomBtns)
-    inputBtn(bottomBtns, "note-button", "Submit")
+    inputBtn(bottomBtns, "note-button", "Submit", "submit-note")
 }
 
 export default noteModal

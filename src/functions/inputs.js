@@ -33,13 +33,13 @@ function inputType(cssClass, idName, parent, type) {
     inputTitle.setAttribute("required", "true")
 }
 
-function inputBtn(parent, cssClass, name) {
+function inputBtn(parent, cssClass, name, id) {
     const submitBtn = document.createElement("button")
     parent.appendChild(submitBtn)
     submitBtn.textContent = `${name}`
     submitBtn.setAttribute("class", `${cssClass}`)
     submitBtn.setAttribute("type", "submit")
-    submitBtn.setAttribute("id", "submit-button")
+    submitBtn.setAttribute("id", `${id}`)
 }
 
 function inputRadio(parent, idName, labelText, radioValue) {

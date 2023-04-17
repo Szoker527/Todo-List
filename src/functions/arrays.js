@@ -2,7 +2,7 @@ import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
 export {addTask, findProjectTitles, findDateArray,
      displayAllProjectTitles, dateArray, nextWeek,
-     addNote}
+     addNote, noteArray}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []

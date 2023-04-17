@@ -19,10 +19,16 @@ function renderModal() {
 
 function renderForm() {
   const formContainer = document.querySelector("#myForm")
+  const menuContainer = document.querySelector(".main-small")
   while (formContainer.firstChild) {
     formContainer.removeChild(formContainer.firstChild);
   }
-  console.log(formContainer)
+  menuContainer.removeChild(formContainer)
+  const newForm = document.createElement("form")
+  newForm.classList.add("display-menu-small")
+  newForm.setAttribute('id', 'myForm');
+  menuContainer.appendChild(newForm)
+  console.log(newForm)
 }
 
 export {render, renderModal, renderForm}

@@ -68,7 +68,7 @@ function bottomBtnSubmit() {
 
     bottomBtns.classList.add("bottom-btn-todo-subm")
     displayMenu.appendChild(bottomBtns)
-    inputBtn(bottomBtns, "todo-button", "Submit")
+    inputBtn(bottomBtns, "todo-button", "Submit", "submit-todo")
 }
 
 function dueDateBtn() {
