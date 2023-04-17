@@ -5,7 +5,6 @@ function project() {
     const projectContainer = document.createElement("div")
     const projectTitle = document.createElement("div")
 
-
     projectContainer.classList.add("projects")
     projectTitle.classList.add("project-title")
     projectTitle.textContent = "Projects"
@@ -14,6 +13,7 @@ function project() {
     leftMenu.appendChild(projectContainer)
 
     const projectTopics = filterTopic()
+
     for (let i = 0; i < projectTopics.length; i++) {
         const element = projectTopics[i];
         const divTopic = document.createElement("div")
@@ -31,7 +31,7 @@ function filterTopic() {
     const uniqueArray = arrayTopic.filter((item, index) => {
         return arrayTopic.indexOf(item) === index;
     });
-
+    console.log(uniqueArray)
     return uniqueArray
 }
 

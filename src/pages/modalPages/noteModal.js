@@ -2,20 +2,22 @@ import { createTask, createNotes } from "../../functions/tasks"
 import { render } from "../../functions/render"
 import home from "../home"
 import { inputBtn, inputTitle, inputTitleNotes } from "../../functions/inputs"
+import menu from "../menu"
 
 function noteModal() {
     const displayMenu = document.querySelector(".display-menu-small")
-    displayMenu.classList.add("display-menu-small-notes")
-    displayMenu.classList.remove('display-menu-small-todo');
+    displayMenu.setAttribute("class", "display-menu-small-notes")
+    displayMenu.classList.add("display-menu-small")
 
     inputTitle("title-input-notes", "input-title", displayMenu, "TITLE")
     inputTitleNotes("description-input-notes", "input-description", displayMenu, "Description")
-    bottomBtnSubmit()
+    bottomBtnSubmit(displayMenu)
 
     const modal = document.querySelector(".modal");
     const form = document.querySelector('#myForm');
     const formTitle = document.querySelector('#input-title');
     const formDescription = document.querySelector('#input-description');
+
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
 
@@ -32,17 +34,17 @@ function noteModal() {
         modal.style.display = 'none';
         createNotes(formTitle.value, formDescription.value)
         render()
+        menu()
         home()
         });
         
     }
     
-function bottomBtnSubmit() {
-    const displayMenu = document.querySelector(".display-menu-small")
+function bottomBtnSubmit(parent) {
     const bottomBtns = document.createElement("div")
 
     bottomBtns.classList.add("bottom-btn-note-submit")
-    displayMenu.appendChild(bottomBtns)
+    parent.appendChild(bottomBtns)
     inputBtn(bottomBtns, "note-button", "Submit", "submit-note")
 }
 

@@ -1,5 +1,6 @@
 import { findProjectTitles } from "../functions/arrays"
 import displayTasks from "../functions/displayTasks"
+import { addedProjectName } from "../functions/tasks"
 
 function projects(idName) {
     const menu = document.querySelector(".display-menu")

@@ -1,8 +1,12 @@
 function render() {
     const menuContainer = document.querySelector(".display-menu")
+    const leftMenuContainer = document.querySelector(".left-menu")
     while (menuContainer.firstChild) {
         menuContainer.removeChild(menuContainer.firstChild);
       }
+    while (leftMenuContainer.firstChild) {
+      leftMenuContainer.removeChild(leftMenuContainer.firstChild);
+    }
 }
 
 function renderModal() {
@@ -30,5 +34,12 @@ function renderForm() {
   menuContainer.appendChild(newForm)
   console.log(newForm)
 }
+
+// function renderProject() {
+//   const projectContainer = document.querySelector(".projects")
+//   while (projectContainer.firstChild) {
+//     projectContainer.removeChild(projectContainer.firstChild);
+//   }
+// }
 
 export {render, renderModal, renderForm}

@@ -2,11 +2,12 @@ import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
 export {addTask, findProjectTitles, findDateArray,
      displayAllProjectTitles, dateArray, nextWeek,
-     addNote, noteArray}
+     addNote, noteArray, addProject}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
 const noteArray = []
+const projectArray = []
 // class taskContainer {
 //     constructor(date, obj) {
 //         this.date = date,
@@ -31,6 +32,11 @@ const noteArray = []
 
     function addNote(obj) {
         noteArray.push(obj)
+    }
+
+    function addProject(title) {
+        projectArray.push(title)
+        console.log(projectArray)
     }
 
 // function checkIfContainerExist(date) {
@@ -75,12 +81,10 @@ function findDateArray(date) {
 }
 
 function displayAllProjectTitles() {
-    const newArray = [];
     dateArray.forEach(function(obj) {
-            newArray.push(obj.project)
-    
+        projectArray.push(obj.project)
     });
-    return newArray
+    return projectArray
 }
 
 function nextWeek() {

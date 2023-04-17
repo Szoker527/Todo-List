@@ -2,6 +2,7 @@ import { inputTitle, inputBtn, inputType, inputRadio } from "../../functions/inp
 import { render } from "../../functions/render"
 import home from "../home"
 import { createTask } from "../../functions/tasks"
+import menu from "../menu"
 
 function toDoModal() {
     const displayMenu = document.querySelector(".display-menu-small")
@@ -40,8 +41,9 @@ function toDoModal() {
         event.preventDefault();
         modal.style.display = 'none';
         const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
-        createTask(formDateSubmit.value, "Work", formTitle.value, formDescription.value , selectedPriority)
+        createTask(formDateSubmit.value, formTitle.value, formDescription.value , selectedPriority)
         render()
+        menu()
         home()
       });
 }

@@ -9,60 +9,66 @@ import modalPage from "./pages/modal"
 import projectModal from "./pages/modalPages/projectModal"
 import style from "./styles/style.css"
 import { createTask } from "./functions/tasks"
+import project from "./functions/projects"
+import menu from "./pages/menu"
 
-
-createTask("2014-02-03", "Work", "What to do", "wdadadadadaada", "low")
-createTask("2014-01-04", "Relax", "Play games", "xxxxxxxxxxxxxxxxx", "medium")
-createTask("2014-03-05", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
-createTask("2023-04-14", "Relax", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
-createTask("2023-04-16", "Relax", "xxxxxx", "gggggg", "low")
-createTask("2023-04-15", "Relax", "xxxxxx", "gggggg", "low")
+createTask("2014-02-03", "What to do", "wdadadadadaada", "low")
+createTask("2014-01-04", "Play games", "xxxxxxxxxxxxxxxxx", "medium")
+createTask("2014-03-05", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2023-04-14", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2023-04-16", "xxxxxx", "gggggg", "low")
+createTask("2023-04-15", "xxxxxx", "gggggg", "low")
 firstLoad()
 
-const homeBtn = document.querySelector(".home-page")
-const todayBtn = document.querySelector(".today-page")
-const weekBtn = document.querySelector(".upcoming-page")
-const projectBtns = document.querySelectorAll('.project-topics');
-const notesBtn = document.querySelector(".notes-page")
-const addBtn = document.querySelector(".add-btn")
+// const homeBtn = document.querySelector(".home-page")
+// const todayBtn = document.querySelector(".today-page")
+// const weekBtn = document.querySelector(".upcoming-page")
+// const projectBtns = document.querySelectorAll('.project-topics');
+// const notesBtn = document.querySelector(".notes-page")
+// const addBtn = document.querySelector(".add-btn")
 
 
-homeBtn.addEventListener("click", function() {
-    render()
-    home()
-    console.log("home")
-})
+// homeBtn.addEventListener("click", function() {
+//     render()
+//     menu()
+//     home()
+//     console.log("home")
+// })
 
-todayBtn.addEventListener("click", function() {
-    render()
-    todayPage()
-    console.log("today")
-})
+// todayBtn.addEventListener("click", function() {
+//     render()
+//     menu()
+//     todayPage()
+//     console.log("today")
+// })
 
-weekBtn.addEventListener("click", function() {
-    render()
-    Week()
-    console.log("week")
-})
+// weekBtn.addEventListener("click", function() {
+//     render()
+//     menu()
+//     Week()
+//     console.log("week")
+// })
 
-projectBtns.forEach((project, index) => {
-    if (index >= 0) {
-        project.addEventListener('click', (event) => {
-            render()
-            projects(event.target.id)
-            console.log(`${event.target.id}`)
-      });
-    }
-  });
+// projectBtns.forEach((project, index) => {
+//     if (index >= 0) {
+//         project.addEventListener('click', (event) => {
+//             render()
+//             menu()
+//             projects(event.target.id)
+//             console.log(`${event.target.id}`)
+//       });
+//     }
+//   });
 
-notesBtn.addEventListener("click", function() {
-    render()
-    notes()
-    console.log("notes")
-})
+// notesBtn.addEventListener("click", function() {
+//     render()
+//     menu()
+//     notes()
+//     console.log("notes")
+// })
 
-addBtn.addEventListener("click", function() {
-    renderModal()
-    modalPage()
-    firstLoadModal()
-})
+// addBtn.addEventListener("click", function() {
+//     renderModal()
+//     modalPage()
+//     firstLoadModal()
+// })
