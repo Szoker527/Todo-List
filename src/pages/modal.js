@@ -38,6 +38,7 @@ function modalPage() {
     menuModal()
     todoSelect()
     projectSelect()
+    noteSelect()
     // firstLoadModal()
 }
 
@@ -83,6 +84,15 @@ function projectSelect() {
         renderForm()
         projectModal()
         console.log(projectMod)
+    })
+}
+
+function noteSelect() {
+    const noteMod = document.querySelector("#noteModal")
+    noteMod.addEventListener("click", function() {
+        renderForm()
+        noteModal()
+        console.log(noteMod)
     })
 }
 export default modalPage

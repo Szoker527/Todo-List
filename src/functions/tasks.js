@@ -1,5 +1,7 @@
-export {createTask}
-import {addTask, findProjectTitles, findDateArray, displayAllProjectTitles, dateArray, nextWeek} from "./arrays"
+export {createTask, createNotes}
+import {addTask, findProjectTitles, findDateArray, 
+    displayAllProjectTitles, dateArray, nextWeek,
+    addNote} from "./arrays"
 import format from 'date-fns/format'
 // Here are tasks functions that create tasks objects
 
@@ -13,10 +15,22 @@ class tasks {
     }
 }
 
+class notes {
+    constructor(title, description) {
+        this.title = title,
+        this.description = description
+    }
+}
+
 function createTask(date, project, title, description, priority) {
     // const result = format(new Date(date), 'yyyy-MM-dd')
     const newObj = new tasks(project.toLowerCase(), title, description, priority, date) 
     addTask(newObj)
     nextWeek()
+}
+
+function createNotes(title, description) {
+    const newNote = new notes(title, description)
+    addNote(newNote)
 }
 

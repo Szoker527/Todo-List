@@ -10,6 +10,19 @@ function inputTitle(cssClass, idName, parent, placeholder) {
 
 }
 
+function inputTitleNotes(cssClass, idName, parent, placeholder, rows, columns) {
+    const inputTitle = document.createElement("textarea")
+    inputTitle.classList.add(`${cssClass}`)
+    parent.appendChild(inputTitle)
+    inputTitle.setAttribute("placeholder", `${placeholder}`)
+    inputTitle.setAttribute("name", `${idName}`)
+    inputTitle.setAttribute("id", `${idName}`)
+    inputTitle.setAttribute("rows", `${rows}`)
+    inputTitle.setAttribute("cols", `${columns}`)
+    inputTitle.setAttribute("required", "true")
+    inputTitle.setAttribute("contenteditable", "true")
+}
+
 function inputType(cssClass, idName, parent, type) {
     const inputTitle = document.createElement("input")
     inputTitle.classList.add(`${cssClass}`)
@@ -43,4 +56,4 @@ function inputRadio(parent, idName, labelText, radioValue) {
     radioBtn.setAttribute("value", `${radioValue}`)
 }
 
-export {inputTitle, inputType, inputBtn, inputRadio}
+export {inputTitle, inputType, inputBtn, inputRadio, inputTitleNotes}
