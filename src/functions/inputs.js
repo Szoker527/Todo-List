@@ -1,4 +1,5 @@
 import { removeFromArray } from "./arrays"
+import detailMod from "../pages/modalPages/detailModal"
 
 function inputTitle(cssClass, idName, parent, placeholder) {
     const inputTitle = document.createElement("input")
@@ -32,6 +33,18 @@ function inputType(cssClass, idName, parent, type) {
     inputTitle.setAttribute("required", "true")
 }
 
+function inputCheckBox(cssClass, parent, obj) {
+    const inputCheck = document.createElement("input")
+    inputCheck.classList.add(`${cssClass}`)
+    parent.appendChild(inputCheck)
+    inputCheck.setAttribute("type", "checkbox")
+    inputCheck.addEventListener("click", function() {
+        const checkBoxTask = document.querySelector(`#task-${obj.id}`)
+        console.log(checkBoxTask)
+        checkBoxTask.style.textDecoration = "line-through";
+    })
+}
+
 function inputImgEdit(cssClass, parent, mySvg, obj) {
     const mySvgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     mySvgElement.classList.add(`${cssClass}`)
@@ -52,12 +65,23 @@ function inputImgTrash(cssClass, parent, mySvg, obj) {
     })
 }
 
+function inputDetail(parent, cssClass, name, obj) {
+    const dispalyDetail = document.createElement("button")
+    parent.appendChild(dispalyDetail)
+    dispalyDetail.textContent = `${name}`
+    dispalyDetail.setAttribute("class", `${cssClass}`)
+    dispalyDetail.addEventListener("click", function() {
+        detailMod(obj)
+    })
+}
+
 function inputBtn(parent, cssClass, name) {
     const submitBtn = document.createElement("button")
     parent.appendChild(submitBtn)
     submitBtn.textContent = `${name}`
     submitBtn.setAttribute("class", `${cssClass}`)
 }
+
 
 function inputRadio(parent, idName, labelText, radioValue) {
     const radioBtn = document.createElement("input")
@@ -74,4 +98,5 @@ function inputRadio(parent, idName, labelText, radioValue) {
 }
 
 export {inputTitle, inputType, inputBtn, inputRadio,
-     inputTitleNotes, inputImgEdit, inputImgTrash }
+     inputTitleNotes, inputImgEdit, inputImgTrash,
+     inputCheckBox, inputDetail }

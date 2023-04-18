@@ -14,9 +14,9 @@ import menu from "./pages/menu"
 
 createTask("2014-02-03", "What to do", "wdadadadadaada", "low")
 createTask("2014-01-04", "Play games", "xxxxxxxxxxxxxxxxx", "medium")
-createTask("2014-03-05", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
-createTask("2023-04-14", "dsdsds", "xxxxxxxxxxxxxxxxx", "high")
-createTask("2023-04-16", "xxxxxx", "gggggg", "low")
-createTask("2023-04-15", "xxxxxx", "gggggg", "low")
+createTask("2014-03-05", "Report about dolphins", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2023-04-14", "Talk to Jarret", "xxxxxxxxxxxxxxxxx", "high")
+createTask("2023-04-16", "Bring Boss coffe", "gggggg", "low")
+createTask("2023-04-15", "Delete xxx files", "gggggg", "high")
 firstLoad()
 

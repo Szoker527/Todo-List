@@ -19,6 +19,12 @@
     background-color: #fefefe;
   }
   
+  .modal-detail {
+    grid-template-rows: 150px 1fr 1fr 1fr;
+    height: 15rem;
+    width: 36rem;
+  }
+
   /* The Close Button */
   .close {
     color: #aaa;
@@ -33,6 +39,11 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .close-detail {
+    justify-self: end;
+    grid-row: 1 / 2;
   }
 
   .display-menu-small-todo {
