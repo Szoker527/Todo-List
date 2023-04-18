@@ -101,6 +101,18 @@ body {
   padding: 6px 12px;
 }
 
+.tasks-obj-trash,
+.tasks-obj-edit {
+  height: 32px;
+  width: 45px;
+}
+
+.tasks-obj-detail {
+  padding: 4px 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
 .display-menu-priority-low,
 .display-menu-priority-medium,
 .display-menu-priority-high {
@@ -117,9 +129,6 @@ body {
   background-color: red;
 }
 
-.tasks-obj-detail {
-  padding: 6px 12px;
-}
 /* end */
 
 .content-menu {

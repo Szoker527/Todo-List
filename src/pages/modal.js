@@ -36,25 +36,9 @@ function modalPage() {
     header.appendChild(headerTitle)
     header.appendChild(span)
     menuModal()
-    // const todoModal = document.querySelector("#todoModal")
-    // const projectMod = document.querySelector("#projectModal")
-    // const noteMod = document.querySelector("#noteModal")
-
-    // todoModal.addEventListener("click", function() {
-    //     renderForm()
-    //     toDoModal()
-    //     console.log(todoModal)
-    // })
-
-    // noteMod.addEventListener("click", function() {
-    //     renderForm()
-    //     noteModal()
-    //     console.log(noteMod)
-    // })
     todoSelect()
     projectSelect()
     noteSelect()
-    // firstLoadModal()
 }
 
 function menuModal() {

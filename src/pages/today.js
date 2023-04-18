@@ -8,7 +8,7 @@ function todayPage() {
     const today = new Date();
     const formattedDate = format(today, 'yyyy-MM-dd');
     const todayArray = findDateArray(formattedDate)
-    displayTasks(menu, "todayTasks", todayArray)
+    displayTasks(menu, todayArray)
 }
 
 export default todayPage

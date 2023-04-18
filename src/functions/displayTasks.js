@@ -1,22 +1,12 @@
 import { addTask, findProjectTitles, findDateArray, 
     displayAllProjectTitles, dateArray, nextWeek } from "./arrays"
-import { inputType } from "./inputs"
+import { inputType, inputImg, inputBtn } from "./inputs"
 import { format } from "date-fns";
+import trash from "../assets/images/trash.svg"
+import edit from "../assets/images/edit.svg"
 
-function displayTasks(parent, topic, array) {
+function displayTasks(parent, array) {
     let arrayTopic = array;
-    // if (topic === "allTasks") {
-    //     arrayTopic = dateArray
-    // }
-    // if (topic === "todayTasks") {
-    //     const today = new Date();
-    //     const formattedDate = format(today, 'yyyy-MM-dd');
-    //     arrayTopic = findDateArray(formattedDate)
-    // }
-    // if (topic === "weekTasks") {
-    //     arrayTopic = nextWeek()
-    // }
-
     arrayTopic.forEach(function(obj) {
         const objContainer = document.createElement("div")
         objContainer.classList.add("display-menu-obj")
@@ -49,10 +39,10 @@ function createTaskLook(priority, title, date, parent) {
     parent.appendChild(objPriority)
     inputType("tasks-obj-check", "check-1", parent, "checkbox")
     parent.appendChild(objTitle)
-    inputType("tasks-obj-detail", "check-2", parent, "button")
+    inputBtn(parent, "tasks-obj-detail", "detail")
     parent.appendChild(objDate)
-    inputType("tasks-obj-btn", "check-3", parent, "button")
-    inputType("tasks-obj-btn", "check-4", parent, "button")
+    inputImg("tasks-obj-edit", parent, edit)
+    inputImg("tasks-obj-trash", parent, trash)
 }
 
 export default displayTasks

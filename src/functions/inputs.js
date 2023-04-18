@@ -30,13 +30,18 @@ function inputType(cssClass, idName, parent, type) {
     inputTitle.setAttribute("required", "true")
 }
 
-function inputBtn(parent, cssClass, name, id) {
+function inputImg(cssClass, parent, mySvg) {
+    const mySvgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    mySvgElement.classList.add(`${cssClass}`)
+    parent.appendChild(mySvgElement)
+    mySvgElement.innerHTML = mySvg;
+}
+
+function inputBtn(parent, cssClass, name) {
     const submitBtn = document.createElement("button")
     parent.appendChild(submitBtn)
     submitBtn.textContent = `${name}`
     submitBtn.setAttribute("class", `${cssClass}`)
-    submitBtn.setAttribute("type", "submit")
-    submitBtn.setAttribute("id", `${id}`)
 }
 
 function inputRadio(parent, idName, labelText, radioValue) {
@@ -53,4 +58,4 @@ function inputRadio(parent, idName, labelText, radioValue) {
     radioBtn.setAttribute("value", `${radioValue}`)
 }
 
-export {inputTitle, inputType, inputBtn, inputRadio, inputTitleNotes}
+export {inputTitle, inputType, inputBtn, inputRadio, inputTitleNotes, inputImg}

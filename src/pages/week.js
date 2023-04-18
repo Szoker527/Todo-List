@@ -5,7 +5,7 @@ import { nextWeek } from "../functions/arrays"
 function Week() {
     const menu = document.querySelector(".display-menu")
     const weekArray = nextWeek()
-    displayTasks(menu, "weekTasks", weekArray)
+    displayTasks(menu, weekArray)
 }
 
 export default Week

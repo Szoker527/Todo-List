@@ -4,7 +4,7 @@ import { dateArray } from "../functions/arrays"
 
 function home() {
     const menu = document.querySelector(".display-menu")
-    displayTasks(menu, "allTasks", dateArray)
+    displayTasks(menu, dateArray)
 }
 
 export default home

@@ -5,7 +5,7 @@ import { addedProjectName } from "../functions/tasks"
 function projects(idName) {
     const menu = document.querySelector(".display-menu")
     const projectArray = findProjectTitles(idName)
-    displayTasks(menu, "weekTasks", projectArray)
+    displayTasks(menu, projectArray)
 }
 
 export default projects
