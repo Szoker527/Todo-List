@@ -90,10 +90,11 @@ body {
 }
 
 .display-menu-obj {
-  display: flex;
-  padding: 10px;
+  display: grid;
   border: solid black 1px;
-  gap: 50px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 16px 50px 1fr 100px 100px 70px 70px;
 }
 
 /* menu tasks obj  */
@@ -113,6 +114,13 @@ body {
   font-weight: 600;
 }
 
+.tasks-obj-title {
+  justify-self: flex-start;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.display-menu
 .display-menu-priority-low,
 .display-menu-priority-medium,
 .display-menu-priority-high {

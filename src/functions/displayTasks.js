@@ -11,7 +11,9 @@ function displayTasks(parent, array) {
         const objContainer = document.createElement("div")
         objContainer.classList.add("display-menu-obj")
         parent.appendChild(objContainer)
-        createTaskLook(obj.priority, obj.title, obj.date, objContainer)
+        const date = new Date(obj.date);
+        const formattedDate = format(date, 'MMM d');
+        createTaskLook(obj.priority, obj.title, formattedDate, objContainer)
     });
     
 }
@@ -21,7 +23,7 @@ function createTaskLook(priority, title, date, parent) {
     const objPriority = document.createElement("div")
     const objDate = document.createElement("div")
 
-    objTitle.classList.add("display-menu-title")
+    objTitle.classList.add("tasks-obj-title")
     objDate.classList.add("display-menu-date")
 
     if (priority === "low") {
