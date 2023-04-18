@@ -3,7 +3,7 @@ import { displayAllProjectTitles } from "./arrays"
 function project() {
     const leftMenu = document.querySelector(".left-menu")
     const projectContainer = document.createElement("div")
-    const projectTitle = document.createElement("div")
+    const projectTitle = document.createElement("span")
 
     projectContainer.classList.add("projects")
     projectTitle.classList.add("project-title")
@@ -15,12 +15,12 @@ function project() {
     const projectTopics = filterTopic()
 
     for (let i = 0; i < projectTopics.length; i++) {
-        const element = projectTopics[i];
-        const divTopic = document.createElement("div")
-
+        const elementText = projectTopics[i];
+        const divTopic = document.createElement("li")
+        const newElementText = elementText.slice(0, 1).toUpperCase() + elementText.slice(1)
         divTopic.classList.add("project-topics")
-        divTopic.setAttribute("id", `${element.toLowerCase()}`)
-        divTopic.textContent = `${element}`
+        divTopic.setAttribute("id", `${elementText.toLowerCase()}`)
+        divTopic.textContent = `${newElementText}`
         projectContainer.appendChild(divTopic)
     }
 }

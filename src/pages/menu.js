@@ -13,10 +13,10 @@ import { addedProjectName, defaultProjectName } from "../functions/tasks"
 // This page creates elements that are displayed on menu
 
 function menu() {
-    const homePage = document.createElement("div")
-    const today = document.createElement("div")
-    const week = document.createElement("div")
-    const notesPage = document.createElement("div")
+    const homePage = document.createElement("li")
+    const today = document.createElement("li")
+    const week = document.createElement("li")
+    const notesPage = document.createElement("li")
     const btnAdd = document.createElement("button")
     const leftMenu = document.querySelector(".left-menu")
     homePage.classList.add("home-page", "left-menu-title")
