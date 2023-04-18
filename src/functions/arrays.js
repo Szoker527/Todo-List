@@ -1,61 +1,51 @@
 import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
+import { render } from './render'
+import menu from '../pages/menu'
+import { defaultProjectName } from './tasks'
+import home from '../pages/home'
 export {addTask, findProjectTitles, findDateArray,
      displayAllProjectTitles, dateArray, nextWeek,
-     addNote, noteArray, addProject}
+     addNote, noteArray, addProject, removeFromArray}
 // Here are functions that add objects to arrays, store them and display them on page.
 
 const dateArray = []
 const noteArray = []
 const projectArray = []
-// class taskContainer {
-//     constructor(date, obj) {
-//         this.date = date,
-//         this.tasks = [obj]
-//     }
-// }
 
-// function addTask(obj, date) {
-//     if(!checkIfContainerExist(date)) {
-//         dateArray.push(new taskContainer(date, obj))
-//         console.log(dateArray)
-//         return
-//     }
-//     const containerObj = checkIfContainerExist(date);
-//     containerObj.tasks.push(obj)
-//     console.log(dateArray)
-// }
+function addTask(obj) {
+    dateArray.push(obj)
+    addIdToTask()
+}
 
-    function addTask(obj) {
-        dateArray.push(obj)
+function addNote(obj) {
+    noteArray.push(obj)
+}
+
+function addProject(title) {
+    projectArray.push(title)
+    console.log(projectArray)
+}
+
+function removeFromArray(id) {
+    let indexToRemove = dateArray.findIndex(obj => obj.id === id);
+// If the object is found in the array, remove it
+    if (indexToRemove !== -1) {
+        dateArray.splice(indexToRemove, 1);
     }
+    addIdToTask()
+    render()
+    menu()
+    defaultProjectName()
+    home()
+    console.log(dateArray)
+}
 
-    function addNote(obj) {
-        noteArray.push(obj)
-    }
-
-    function addProject(title) {
-        projectArray.push(title)
-        console.log(projectArray)
-    }
-
-// function checkIfContainerExist(date) {
-//     let containerExists = false;
-//     let containerObj;
-
-//     dateArray.forEach(function(obj) {
-//       if(obj.date === date) {
-//         containerExists = true;
-//         containerObj = obj;
-//       }
-//     });
-
-//     if(containerExists === false) {
-//         return containerExists;
-//     } else {
-//         return containerObj
-//     }
-// }
+function addIdToTask() {
+    dateArray.forEach(function(obj, index) {
+            obj.id = index
+    });
+}
 
 function findProjectTitles(projectName) {
     const newArray = [];

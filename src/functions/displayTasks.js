@@ -1,6 +1,6 @@
 import { addTask, findProjectTitles, findDateArray, 
     displayAllProjectTitles, dateArray, nextWeek } from "./arrays"
-import { inputType, inputImg, inputBtn } from "./inputs"
+import { inputType, inputBtn, inputImgTrash, inputImgEdit } from "./inputs"
 import { format } from "date-fns";
 import trash from "../assets/images/trash.svg"
 import edit from "../assets/images/edit.svg"
@@ -13,12 +13,12 @@ function displayTasks(parent, array) {
         parent.appendChild(objContainer)
         const date = new Date(obj.date);
         const formattedDate = format(date, 'MMM d');
-        createTaskLook(obj.priority, obj.title, formattedDate, objContainer)
+        createTaskLook(obj.priority, obj.title, formattedDate, objContainer, obj)
     });
     
 }
 
-function createTaskLook(priority, title, date, parent) {
+function createTaskLook(priority, title, date, parent, obj) {
     const objTitle = document.createElement("div")
     const objPriority = document.createElement("div")
     const objDate = document.createElement("div")
@@ -43,8 +43,8 @@ function createTaskLook(priority, title, date, parent) {
     parent.appendChild(objTitle)
     inputBtn(parent, "tasks-obj-detail", "detail")
     parent.appendChild(objDate)
-    inputImg("tasks-obj-edit", parent, edit)
-    inputImg("tasks-obj-trash", parent, trash)
+    inputImgEdit("tasks-obj-edit", parent, edit, obj)
+    inputImgTrash("tasks-obj-trash", parent, trash, obj)
 }
 
 export default displayTasks

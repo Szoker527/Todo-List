@@ -1,3 +1,5 @@
+import { removeFromArray } from "./arrays"
+
 function inputTitle(cssClass, idName, parent, placeholder) {
     const inputTitle = document.createElement("input")
     inputTitle.classList.add(`${cssClass}`)
@@ -30,11 +32,24 @@ function inputType(cssClass, idName, parent, type) {
     inputTitle.setAttribute("required", "true")
 }
 
-function inputImg(cssClass, parent, mySvg) {
+function inputImgEdit(cssClass, parent, mySvg, obj) {
     const mySvgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     mySvgElement.classList.add(`${cssClass}`)
     parent.appendChild(mySvgElement)
     mySvgElement.innerHTML = mySvg;
+    mySvgElement.addEventListener("click", function() {
+        console.log(obj.title)
+    })
+}
+
+function inputImgTrash(cssClass, parent, mySvg, obj) {
+    const mySvgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    mySvgElement.classList.add(`${cssClass}`)
+    parent.appendChild(mySvgElement)
+    mySvgElement.innerHTML = mySvg;
+    mySvgElement.addEventListener("click", function() {
+        removeFromArray(obj.id)
+    })
 }
 
 function inputBtn(parent, cssClass, name) {
@@ -58,4 +73,5 @@ function inputRadio(parent, idName, labelText, radioValue) {
     radioBtn.setAttribute("value", `${radioValue}`)
 }
 
-export {inputTitle, inputType, inputBtn, inputRadio, inputTitleNotes, inputImg}
+export {inputTitle, inputType, inputBtn, inputRadio,
+     inputTitleNotes, inputImgEdit, inputImgTrash }
