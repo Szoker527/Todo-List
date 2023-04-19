@@ -1,4 +1,4 @@
-
+import { renderModal } from "../../functions/render"
 
 function detailMod(obj) {
     const body = document.querySelector("body")
@@ -34,6 +34,7 @@ function detailMod(obj) {
 
     span.addEventListener("click", () => {
         myModal.style.display = "none"
+        renderModal()
     })
 
     body.appendChild(myModal)

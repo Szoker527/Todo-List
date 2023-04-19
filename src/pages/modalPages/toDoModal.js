@@ -1,5 +1,5 @@
 import { inputTitle, inputBtn, inputType, inputRadio } from "../../functions/inputs"
-import { render } from "../../functions/render"
+import { render, renderModal } from "../../functions/render"
 import home from "../home"
 import { createTask } from "../../functions/tasks"
 import menu from "../menu"
@@ -43,6 +43,7 @@ function toDoModal() {
         const selectedPriority = document.querySelector('input[name="priority"]:checked').value;
         createTask(formDateSubmit.value, formTitle.value, formDescription.value , selectedPriority)
         render()
+        renderModal()
         menu()
         home()
       });

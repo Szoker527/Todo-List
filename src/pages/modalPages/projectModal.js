@@ -1,7 +1,7 @@
 import { inputTitle, inputBtn } from "../../functions/inputs";
 import { createProject } from "../../functions/tasks";
 import home from "../home";
-import { render } from "../../functions/render";
+import { render, renderModal} from "../../functions/render";
 import menu from "../menu"
 
 function projectModal() {
@@ -32,6 +32,7 @@ function projectModal() {
         modal.style.display = 'none';
         createProject(formProjectTitle.value)
         render()
+        renderModal()
         menu()
         home()
         });

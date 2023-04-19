@@ -1,5 +1,5 @@
 import { createTask, createNotes } from "../../functions/tasks"
-import { render } from "../../functions/render"
+import { render, renderModal } from "../../functions/render"
 import home from "../home"
 import { inputBtn, inputTitle, inputTitleNotes } from "../../functions/inputs"
 import menu from "../menu"
@@ -33,6 +33,7 @@ function noteModal() {
         event.preventDefault();
         modal.style.display = 'none';
         createNotes(formTitle.value, formDescription.value)
+        renderModal()
         render()
         menu()
         home()

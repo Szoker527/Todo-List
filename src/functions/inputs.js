@@ -22,16 +22,18 @@ function inputTitleNotes(cssClass, idName, parent, placeholder) {
     inputTitle.setAttribute("name", `${idName}`)
     inputTitle.setAttribute("id", `${idName}`)
     inputTitle.setAttribute("required", "true")
+    return inputTitle
 }
 
 function inputType(cssClass, idName, parent, type) {
-    const inputTitle = document.createElement("input")
-    inputTitle.classList.add(`${cssClass}`)
-    parent.appendChild(inputTitle)
-    inputTitle.setAttribute("type", `${type}`)
-    inputTitle.setAttribute("name", `${idName}`)
-    inputTitle.setAttribute("id", `${idName}`)
-    inputTitle.setAttribute("required", "true")
+    const inputType = document.createElement("input")
+    inputType.classList.add(`${cssClass}`)
+    parent.appendChild(inputType)
+    inputType.setAttribute("type", `${type}`)
+    inputType.setAttribute("name", `${idName}`)
+    inputType.setAttribute("id", `${idName}`)
+    inputType.setAttribute("required", "true")
+    return inputType
 }
 
 function inputCheckBox(cssClass, parent, obj) {
@@ -96,6 +98,7 @@ function inputRadio(parent, idName, labelText, radioValue) {
     radioBtn.setAttribute("id", `${idName}`)
     radioBtn.setAttribute("name", "priority")
     radioBtn.setAttribute("value", `${radioValue}`)
+    return radioBtn
 }
 
 export {inputTitle, inputType, inputBtn, inputRadio,
