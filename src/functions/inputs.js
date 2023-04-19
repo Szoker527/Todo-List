@@ -1,5 +1,6 @@
 import { removeFromArray } from "./arrays"
 import detailMod from "../pages/modalPages/detailModal"
+import editModal from "../pages/modalPages/editModal"
 
 function inputTitle(cssClass, idName, parent, placeholder) {
     const inputTitle = document.createElement("input")
@@ -51,7 +52,7 @@ function inputImgEdit(cssClass, parent, mySvg, obj) {
     parent.appendChild(mySvgElement)
     mySvgElement.innerHTML = mySvg;
     mySvgElement.addEventListener("click", function() {
-        console.log(obj.title)
+        editModal(obj)
     })
 }
 
