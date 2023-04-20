@@ -35,11 +35,4 @@ function renderForm() {
   console.log(newForm)
 }
 
-// function renderProject() {
-//   const projectContainer = document.querySelector(".projects")
-//   while (projectContainer.firstChild) {
-//     projectContainer.removeChild(projectContainer.firstChild);
-//   }
-// }
-
 export {render, renderModal, renderForm}

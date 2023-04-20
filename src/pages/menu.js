@@ -10,20 +10,22 @@ import modalPage from "./modal"
 import projectModal from "./modalPages/projectModal"
 import style from "../styles/style.css"
 import { addedProjectName, defaultProjectName } from "../functions/tasks"
+import { restoreDefault } from ".."
 // This page creates elements that are displayed on menu
-
 function menu() {
     const homePage = document.createElement("li")
     const today = document.createElement("li")
     const week = document.createElement("li")
     const notesPage = document.createElement("li")
     const btnAdd = document.createElement("button")
+    const btnReset = document.createElement("button")
     const leftMenu = document.querySelector(".left-menu")
     homePage.classList.add("home-page", "left-menu-title")
     today.classList.add("today-page", "left-menu-title")
     week.classList.add("upcoming-page", "left-menu-title")
     notesPage.classList.add("notes-page", "left-menu-title")
     btnAdd.classList.add("add-btn")
+    btnReset.classList.add("reset-btn")
 
 
     homePage.textContent = "Home"
@@ -31,6 +33,7 @@ function menu() {
     week.textContent = "Week"
     notesPage.textContent = "Notes"
     btnAdd.textContent = "ADD"
+    btnReset.textContent = "Reset"
 
     leftMenu.appendChild(homePage)
     leftMenu.appendChild(today)
@@ -38,6 +41,7 @@ function menu() {
     project()
     leftMenu.appendChild(notesPage)
     leftMenu.appendChild(btnAdd)
+    leftMenu.appendChild(btnReset)
 
     const homeBtn = document.querySelector(".home-page")
     const todayBtn = document.querySelector(".today-page")
@@ -45,6 +49,7 @@ function menu() {
     const projectBtns = document.querySelectorAll('.project-topics');
     const notesBtn = document.querySelector(".notes-page")
     const addBtn = document.querySelector(".add-btn")
+    const resetBtn = document.querySelector(".reset-btn")
 
 
 homeBtn.addEventListener("click", function() {
@@ -68,7 +73,8 @@ weekBtn.addEventListener("click", function() {
     menu()
     defaultProjectName()
     Week()
-    console.log("week")
+    weekBtn.classList.add("selected-nav")
+    console.log(weekBtn)
 })
 
 projectBtns.forEach((project, index) => {
@@ -96,6 +102,16 @@ addBtn.addEventListener("click", function() {
     modalPage()
     firstLoadModal()
 })
+
+resetBtn.addEventListener("click", function() {
+    restoreDefault()
+    location.reload();
+})
+
 }
+
+// function checkedState(element) {
+//     element.classList.add("selected-nav")
+// }
 
 export default menu

@@ -3,6 +3,7 @@ import { render, renderModal } from "../../functions/render"
 import home from "../home"
 import { createTask } from "../../functions/tasks"
 import menu from "../menu"
+import {updateStorage} from "../.."
 
 function toDoModal() {
     const displayMenu = document.querySelector(".display-menu-small")
@@ -46,6 +47,7 @@ function toDoModal() {
         renderModal()
         menu()
         home()
+        updateStorage()
       });
 }
 

@@ -1,8 +1,8 @@
-import { inputTitle, inputBtn, inputType, inputRadio, inputTitleNotes } from "../../functions/inputs"
+import { inputBtn, inputType, inputRadio, inputTitleNotes } from "../../functions/inputs"
 import { render, renderModal } from "../../functions/render"
 import home from "../home"
-import { createTask } from "../../functions/tasks"
 import menu from "../menu"
+import {updateStorage} from "../.."
 
 function editModal(obj) {   
     const body = document.querySelector("body")
@@ -45,6 +45,7 @@ function editModal(obj) {
         renderModal()
         menu()
         home()
+        updateStorage()
         });
 }
 

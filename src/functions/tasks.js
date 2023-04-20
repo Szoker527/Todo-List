@@ -1,27 +1,23 @@
-export {createTask, createNotes, createProject,
-     defaultProjectName, addedProjectName}
 import {addTask, findProjectTitles, findDateArray, 
     displayAllProjectTitles, dateArray, nextWeek,
     addNote, addProject } from "./arrays"
-import format from 'date-fns/format'
-import project from "./projects";
-// Here are tasks functions that create tasks objects
-
-let currentProjectName = "work";
-
-class tasks {
-    constructor(project, title, description, priority, date) {
-        this.project = project,
-        this.title = title,
-        this.description = description,
-        this.priority = priority,
-        this.date = date
+    // Here are tasks functions that create tasks objects
+    
+    let currentProjectName = "work";
+    
+    class tasks {
+        constructor(project, title, description, priority, date) {
+            this.project = project,
+            this.title = title,
+            this.description = description,
+            this.priority = priority,
+            this.date = date
+        }
     }
-}
-
-class notes {
-    constructor(title, description) {
-        this.title = title,
+    
+    class notes {
+        constructor(title, description) {
+            this.title = title,
         this.description = description
     }
 }
@@ -52,3 +48,6 @@ function addedProjectName(name) {
     currentProjectName = name;
 }
 
+
+export {createTask, createNotes, createProject,
+     defaultProjectName, addedProjectName}

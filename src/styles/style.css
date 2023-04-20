@@ -61,11 +61,26 @@ body {
   background-color: #e7e7e7;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
 }
 
 .left-menu li {
   list-style: none;
+  user-select: none;
+}
+.left-menu li:hover {
+  color: blueviolet;
+}
+
+.left-menu li:hover::before {
+  content: "// ";
+}
+
+.selected-nav {
+  color: blueviolet;
+}
+
+.selected-nav::before {
+  content: "// ";
 }
 
 .left-menu-large {
