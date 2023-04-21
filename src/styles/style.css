@@ -193,7 +193,8 @@ body {
   padding-top: 15px;
 }
 
-.add-btn {
+.add-btn,
+.reset-btn {
   width: 5rem;
   height: 2rem;
   font-weight: 600;
