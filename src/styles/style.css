@@ -97,7 +97,6 @@ body {
 
 .display-menu {
   display: grid;
-  /* flex-direction: column; */
   padding: 20px;
   grid-template-rows: repeat(auto-fit, minmax(0px, 60px));
   gap: 10px;
