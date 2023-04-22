@@ -47,8 +47,8 @@
             cursor: pointer;
         }
 
-    .display-small {
-        display: grid;
+    .display-todo {
+        display: none;
         grid-template-rows: 1fr 3fr 1fr 1fr;
         padding: 20px;
         font-family: "Ubuntu-Light", sans-serif;
@@ -67,7 +67,7 @@
                 font-size: 1.2rem;
             }
 
-        .display-bottom-buttons {
+        .display-todo-buttons {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -122,3 +122,37 @@
                 padding: 9px 11px;
                 font-family: "Ubuntu-Light", sans-serif;
             }
+
+    .display-project {
+        display: none;
+        grid-template-rows: 4fr 1fr;
+        padding: 25px;
+    }
+
+        .display-project textarea {
+            font-size: 1.2rem;
+        }
+
+        .display-project-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+
+    .display-note {
+        display: none;
+        grid-template-rows: 4fr 1fr;
+        padding: 25px;
+    }
+
+        .display-note textarea {
+            font-size: 1.2rem;
+        }
+
+        .display-note-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    
