@@ -1,5 +1,25 @@
 import style from "./styles/styles.css"
 import modals from "./styles/modals.css"
+import dateArray from "./functions/arrays"
+
+console.log(dateArray)
+
+
+const nodeContainer = document.getElementById('display');
+const originalNode = document.getElementById('original');
+const clonedNode = originalNode.cloneNode(true);
+
+clonedNode.id = 'cloned';
+
+for (let i = 0; i < dateArray.length; i++) {
+    const clonedNode = originalNode.cloneNode(true);
+    clonedNode.id = 'cloned-' + i;
+    clonedNode.querySelector('.task-title').textContent = dateArray[i].title;
+    clonedNode.querySelector('.task-date').textContent = dateArray[i].date;
+    nodeContainer.appendChild(clonedNode);
+  }
+
+console.log(nodeContainer)
 // import { firstLoad, firstLoadModal } from "./functions/firstLoad"
 // import { createTask } from "./functions/tasks"
 // import { dateArray } from "./functions/arrays"

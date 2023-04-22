@@ -45,7 +45,6 @@ body {
     grid-template-rows: 90px 1fr;
     height: 45rem;
     width: 90rem;
-    display: none;
 }
 
 .header {
@@ -100,11 +99,11 @@ body {
         cursor: pointer;
     }
 
-    .menu ul {
+    .menu-large ul {
         padding-left: 80px;
     }
 
-        .project-content {
+        ul .project-content {
             font-size: 1.5rem;
             padding-left: 110px;
         }
@@ -140,6 +139,7 @@ body {
 
 .display {
     display: grid;
+    overflow: auto;
 }
 
 .display-large {
@@ -197,8 +197,9 @@ body {
           a:hover .icon {
             fill: blue;
           }
-/* Here are global style that are meant to be reused */
 
+
+/* Here are global styles that are meant to be reused */
 button {
     position: relative;
     top: 0;

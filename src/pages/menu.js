@@ -8,7 +8,6 @@ import { firstLoadModal } from "../functions/firstLoad"
 import { render, renderModal } from "../functions/render"
 import modalPage from "./modal"
 import projectModal from "./modalPages/projectModal"
-import style from "../styles/style.css"
 import { addedProjectName, defaultProjectName } from "../functions/tasks"
 import { restoreDefault } from ".."
 // This page creates elements that are displayed on menu
