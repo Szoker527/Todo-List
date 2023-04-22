@@ -47,14 +47,15 @@
           <li>Project</li>
           <li>Note</li>
         </ul>
-        <div class="display display-small">
+
+        <form class="display display-todo">
           <textarea name="" id="" placeholder="Title:"></textarea>
           <textarea name="" id="" placeholder="Description: e.g internet, phone, rent."></textarea>
           <div class="display-date">
             <span>Due Date:</span>
             <input type="date" name="" id="">
           </div>
-          <div class="display-bottom-buttons">
+          <div class="display-todo-buttons">
             <div class="radio-buttons">
               <span>Priority:</span>
               <input type="radio" id="low" name="radio-group">
@@ -68,7 +69,21 @@
             </div>
             <button type="submit" class="display-submit">Submit</button>
           </div>
-        </div>
+        </form>
+
+        <form class="display display-project">
+          <textarea name="" id="" placeholder="New Project Name:"></textarea>
+          <div class="display-project-buttons">
+            <button type="submit" class="display-submit">Submit</button>
+          </div>
+        </form>
+
+        <form class="display display-note">
+          <textarea name="" id="" placeholder="New Note:"></textarea>
+          <div class="display-note-buttons">
+            <button type="submit" class="display-submit">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
 
