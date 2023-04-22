@@ -5,12 +5,13 @@
     <title>Getting Started</title>
   </head>
   <body>
+
     <main class="main main-large">
-      <div class="header">
+      <div class="header header-large">
         <span class="slash">//</span>
         <h1>To-Do</h1>
       </div>
-      <ul class="menu">
+      <ul class="menu menu-large">
         <li>Home</li>
         <li>Today</li>
         <li>Week</li>
@@ -22,7 +23,7 @@
           <span>+</span>
         </button>
       </ul>
-      <div class="display">
+      <div class="display display-large">
         <div class="task-container">
           <span class="task-color"></span>
           <input type="checkbox" name="" id="" class="task-checkbox">
@@ -34,6 +35,43 @@
         </div>
       </div>
     </main>
+
+    <div class="modal">
+      <div class="main main-small">
+        <div class="header header-small">
+          <span class="slash">//</span>
+          <h1>Create a new...</h1>
+        </div>
+        <ul class="menu menu-small">
+          <li>To Do</li>
+          <li>Project</li>
+          <li>Note</li>
+        </ul>
+        <div class="display display-small">
+          <textarea name="" id="" placeholder="Title:"></textarea>
+          <textarea name="" id="" placeholder="Description: e.g internet, phone, rent."></textarea>
+          <div class="display-date">
+            <span>Due Date:</span>
+            <input type="date" name="" id="">
+          </div>
+          <div class="display-bottom-buttons">
+            <div class="radio-buttons">
+              <span>Priority:</span>
+              <input type="radio" id="low" name="radio-group">
+              <label for="low" class="radio-button">Low</label>
+              
+              <input type="radio" id="medium" name="radio-group">
+              <label for="medium" class="radio-button">Medium</label>
+              
+              <input type="radio" id="high" name="radio-group">
+              <label for="high" class="radio-button">High</label>
+            </div>
+            <button type="submit" class="display-submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
    <script src="main.js"></script>
   </body>
 </html>

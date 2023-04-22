@@ -1,4 +1,5 @@
 import style from "./styles/styles.css"
+import modals from "./styles/modals.css"
 // import { firstLoad, firstLoadModal } from "./functions/firstLoad"
 // import { createTask } from "./functions/tasks"
 // import { dateArray } from "./functions/arrays"
