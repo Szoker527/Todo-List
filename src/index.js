@@ -1,25 +1,37 @@
 import style from "./styles/styles.css"
 import modals from "./styles/modals.css"
-import dateArray from "./functions/arrays"
+import { returnTaskArray } from "./functions/arrays"
+import { firstLoad } from "./functions/firstLoad"
+import { render } from "./functions/render"
+firstLoad()
 
-console.log(dateArray)
+const home = document.getElementById("home");
 
 
-const nodeContainer = document.getElementById('display');
-const originalNode = document.getElementById('original');
-const clonedNode = originalNode.cloneNode(true);
 
-clonedNode.id = 'cloned';
+home.addEventListener("click", function() {
+  firstLoad()
+})
 
-for (let i = 0; i < dateArray.length; i++) {
-    const clonedNode = originalNode.cloneNode(true);
-    clonedNode.id = 'cloned-' + i;
-    clonedNode.querySelector('.task-title').textContent = dateArray[i].title;
-    clonedNode.querySelector('.task-date').textContent = dateArray[i].date;
-    nodeContainer.appendChild(clonedNode);
-  }
 
-console.log(nodeContainer)
+// console.log(returnTaskArray())
+
+
+// const nodeContainer = document.getElementById('display');
+// const originalNode = document.getElementById('original');
+// const clonedNode = originalNode.cloneNode(true);
+
+// clonedNode.id = 'cloned';
+
+// for (let i = 0; i < returnTaskArray().length; i++) {
+//     const clonedNode = originalNode.cloneNode(true);
+//     clonedNode.id = 'cloned-' + i;
+//     clonedNode.querySelector('.task-title').textContent = returnTaskArray()[i].title;
+//     clonedNode.querySelector('.task-date').textContent = returnTaskArray()[i].date;
+//     nodeContainer.appendChild(clonedNode);
+//   }
+
+// console.log(nodeContainer)
 // import { firstLoad, firstLoadModal } from "./functions/firstLoad"
 // import { createTask } from "./functions/tasks"
 // import { dateArray } from "./functions/arrays"

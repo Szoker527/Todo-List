@@ -1,11 +1,9 @@
+
+
 function render() {
-    const menuContainer = document.querySelector(".display-menu")
-    const leftMenuContainer = document.querySelector(".left-menu")
-    while (menuContainer.firstChild) {
-        menuContainer.removeChild(menuContainer.firstChild);
-      }
-    while (leftMenuContainer.firstChild) {
-      leftMenuContainer.removeChild(leftMenuContainer.firstChild);
+    const display = document.getElementById("display")
+    while (display.childNodes.length > 1) {
+      display.removeChild(display.lastChild);
     }
 }
 

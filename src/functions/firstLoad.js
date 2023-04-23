@@ -1,18 +1,22 @@
-import home from "../pages/home"
-import menu from "../pages/menu"
-import toDoModal from "../pages/modalPages/toDoModal"
-import { setStorageArray, dateArray } from "./arrays"
+// import home from "../pages/home"
+// import menu from "../pages/menu"
+// import toDoModal from "../pages/modalPages/toDoModal"
+import { returnTaskArray } from "./arrays"
+import displayTasks from "./displayTasks"
+
+// When user opens website this will be the first thing that will be displayed.
 
 function firstLoad() {
-    const retrievedTasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(retrievedTasks)
-    setStorageArray(retrievedTasks)
-    home()
-    menu()
+    // const retrievedTasks = JSON.parse(localStorage.getItem("tasks"));
+    // console.log(retrievedTasks)
+    // setStorageArray(retrievedTasks)
+    // home()
+    // menu()
+    displayTasks(returnTaskArray())
 }
 
-function firstLoadModal() {
-    toDoModal()
-}
+// function firstLoadModal() {
+//     toDoModal()
+// }
 
-export {firstLoad, firstLoadModal}
+export {firstLoad}

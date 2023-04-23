@@ -7,8 +7,7 @@
 // import {updateStorage} from '..'
 
 // Here are functions that add objects to arrays, store them and display them on page.
-
-let dateArray = [
+let taskArray = [
     {
         project: "work",
         title: "What to do",
@@ -75,8 +74,12 @@ let dateArray = [
     }
 ]
 
-// const noteArray = []
-// const projectArray = []
+const projectArray = []
+const noteArray = []
+
+function returnTaskArray() {
+    return taskArray
+}
 
 // function addTask(obj) {
 //     dateArray.push(obj)
@@ -166,4 +169,4 @@ let dateArray = [
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export default dateArray
+export {returnTaskArray,}
