@@ -3,13 +3,13 @@ import modals from "./styles/modals.css"
 import { firstLoad } from "./functions/firstLoad"
 import { render } from "./functions/render"
 import displayTasks from "./functions/displayTasks"
-import { nextWeek, todayTasks } from "./functions/arrays"
+import { nextWeek, todayTasks, findProjectTitles } from "./functions/arrays"
 firstLoad()
 
 const home = document.getElementById("home");
 const today = document.getElementById("today");
 const week = document.getElementById("week");
-
+const projects = document.querySelectorAll('.project-content');
 
 home.addEventListener("click", function() {
   firstLoad()
@@ -22,6 +22,13 @@ today.addEventListener("click", function() {
 week.addEventListener("click", function() {
   displayTasks(nextWeek())
 })
+
+projects.forEach(projectName => {
+  projectName.addEventListener('click', function() {
+    displayTasks(findProjectTitles(projectName.id))
+    console.log(`Clicked div with id: ${projectName.id}`);
+  });
+});
 
 
 

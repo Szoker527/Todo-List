@@ -120,16 +120,18 @@ function returnTaskArray() {
 //     });
 // }
 
-// function findProjectTitles(projectName) {
-//     const newArray = [];
-//     dateArray.forEach(function(obj) {
-//         if(obj.project === projectName) {
-//             newArray.push(obj)
-//         }
+function findProjectTitles(projectName) {
+    const newstring = projectName.replace(/-/g, ' ')
+    console.log(newstring)
+    const newArray = [];
+    taskArray.forEach(function(obj) {
+        if(obj.project === newstring) {
+            newArray.push(obj)
+        }
         
-//     });
-//     return newArray
-// }
+    });
+    return newArray
+}
 
 // function findDateArray(date) {
 //     const newArray = [];
@@ -176,4 +178,4 @@ function todayTasks() {
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export {returnTaskArray, nextWeek, todayTasks}
+export {returnTaskArray, nextWeek, todayTasks, findProjectTitles}
