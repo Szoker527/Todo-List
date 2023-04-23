@@ -11,18 +11,36 @@
     src: url("../fonts/Ubuntu/Ubuntu-Light.ttf") format("truetype");
 }
 
+/* For Webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1E90FF;
+}
+
+/* For Firefox */
+::-moz-scrollbar {
+    width: 8px;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: #1E90FF;
+}
+
 :root {
     --primary-color: #1E90FF;
     --secondary-color: #fff;
     --text-color: #333;
     --bg-color: #f5f5f5;
-  }  
+}  
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
 body {
     height: 100vh;
@@ -38,7 +56,7 @@ body {
     display: grid;
     border: 1px solid #ddd;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
 
 .main-large {
     grid-template-columns: 350px 1fr;
@@ -143,10 +161,10 @@ body {
 }
 
 .display-large {
+    grid-template-rows: repeat( auto-fit, 60px );
     padding: 20px;
-    grid-template-rows: repeat(auto-fit, minmax(0px, 60px));
-    gap: 10px;
-    padding-top: 50px;
+    padding-top: 40px;
+    gap: 8px;
 }
 
     .task-container {
