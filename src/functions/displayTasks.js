@@ -19,17 +19,19 @@ function displayTasks(array) {
     const clonedNode = originalNode.cloneNode(true);
     clonedNode.id = 'cloned';
   
-  // Remove all child nodes except the original
-  while (nodeContainer.lastChild && nodeContainer.lastChild !== originalNode) {
-    nodeContainer.removeChild(nodeContainer.lastChild);
-  }
+    // Remove all child nodes except the original
+    while (nodeContainer.lastChild && nodeContainer.lastChild !== originalNode) {
+        nodeContainer.removeChild(nodeContainer.lastChild);
+    }
   
     for (let i = 0; i < array.length; i++) {
-      const clonedNode = originalNode.cloneNode(true);
-      clonedNode.id = 'id-' + i;
-      clonedNode.querySelector('.task-title').textContent = array[i].title;
-      clonedNode.querySelector('.task-date').textContent = array[i].date;
-      nodeContainer.appendChild(clonedNode);
+        const date = new Date(array[i].date);
+        const formattedDate = format(date, 'MMM d');
+        const clonedNode = originalNode.cloneNode(true);
+        clonedNode.id = 'id-' + i;
+        clonedNode.querySelector('.task-title').textContent = array[i].title;
+        clonedNode.querySelector('.task-date').textContent = formattedDate;
+        nodeContainer.appendChild(clonedNode);
     }
   
     originalNode.style.display = "none";

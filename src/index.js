@@ -1,17 +1,28 @@
 import style from "./styles/styles.css"
 import modals from "./styles/modals.css"
-import { returnTaskArray } from "./functions/arrays"
 import { firstLoad } from "./functions/firstLoad"
 import { render } from "./functions/render"
+import displayTasks from "./functions/displayTasks"
+import { nextWeek, todayTasks } from "./functions/arrays"
 firstLoad()
 
 const home = document.getElementById("home");
-
+const today = document.getElementById("today");
+const week = document.getElementById("week");
 
 
 home.addEventListener("click", function() {
   firstLoad()
 })
+
+today.addEventListener("click", function() {
+  displayTasks(todayTasks())
+})
+
+week.addEventListener("click", function() {
+  displayTasks(nextWeek())
+})
+
 
 
 // console.log(returnTaskArray())

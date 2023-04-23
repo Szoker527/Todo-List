@@ -1,5 +1,5 @@
-// import format from 'date-fns/format'
-// import addDays from 'date-fns/addDays'
+import format from 'date-fns/format'
+import addDays from 'date-fns/addDays'
 // import { render } from './render'
 // import menu from '../pages/menu'
 // import { defaultProjectName } from './tasks'
@@ -53,7 +53,7 @@ let taskArray = [
         title: "Talk to Jarret",
         description: "xxxxxxxxxxxxxxxxx",
         priority: "high",
-        date: "2023-04-14",
+        date: "2023-04-25",
         id: 4
     },
     {
@@ -61,7 +61,7 @@ let taskArray = [
         title: "Bring Boss coffe",
         description: "gggggg",
         priority: "low",
-        date: "2023-04-16",
+        date: "2023-04-27",
         id: 5
     },
     {
@@ -69,7 +69,7 @@ let taskArray = [
         title: "Delete xxx files",
         description: "gggggg",
         priority: "high",
-        date: "2023-04-15",
+        date: "2023-04-23",
         id: 6
     }
 ]
@@ -150,23 +150,30 @@ function returnTaskArray() {
 //     return projectArray
 // }
 
-// function nextWeek() {
-//     const today = new Date();
-//     const nextSevenDays = [...Array(7)].map((_, i) => addDays(today, i));
-//     const weekArray = [];
-//     nextSevenDays.forEach((date, i) => {
-//         const nextDay = `${format(date, 'yyyy-MM-dd')}`
-//         dateArray.forEach(function(obj) {
-//             const newobjArray = obj.date
-//             if(newobjArray === nextDay) {
-//                 weekArray.push(obj)
-//             }    
-//         });
-//     });
-//     return weekArray
-// }
+function nextWeek() {
+    const today = new Date();
+    const nextSevenDays = [...Array(7)].map((_, i) => addDays(today, i));
+    const weekArray = [];
+    nextSevenDays.forEach((date, i) => {
+        const nextDay = `${format(date, 'yyyy-MM-dd')}`
+        taskArray.forEach(function(obj) {
+            const newobjArray = obj.date
+            if(newobjArray === nextDay) {
+                weekArray.push(obj)
+            }    
+        });
+    });
+    return weekArray
+}
+
+function todayTasks() {
+    const today = new Date();
+    const todayFormatted = `${format(today, 'yyyy-MM-dd')}`
+    const todayArray = taskArray.filter((obj) => obj.date === todayFormatted);
+    return todayArray;
+  }
 
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export {returnTaskArray,}
+export {returnTaskArray, nextWeek, todayTasks}
