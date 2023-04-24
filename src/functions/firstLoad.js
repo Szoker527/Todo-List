@@ -16,7 +16,7 @@ function firstLoad() {
 }
 
 function firstLoadModal() {
-    const toDoModal = document.getElementById("display-todo")
+    const toDoModal = document.getElementById("display-modal")
     toDoModal.style.display = "grid"
 }
 

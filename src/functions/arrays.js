@@ -91,10 +91,10 @@ function addTask(obj) {
 //     noteArray.push(obj)
 // }
 
-// function addProject(title) {
-//     projectArray.push(title)
-//     console.log(projectArray)
-// }
+function addProject(title) {
+    projectArray.push(title)
+    console.log(projectArray)
+}
 
 // function removeFromArray(id) {
 //     let indexToRemove = dateArray.findIndex(obj => obj.id === id);
@@ -178,4 +178,4 @@ function todayTasks() {
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export {returnTaskArray, nextWeek, todayTasks, findProjectTitles, addTask}
+export {returnTaskArray, nextWeek, todayTasks, findProjectTitles, addTask, addProject}

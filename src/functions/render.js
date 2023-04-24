@@ -8,15 +8,16 @@ function render() {
 }
 
 function renderModal() {
-  const body = document.querySelector("body")
-  const menuContainer = document.querySelector(".modal")
-  if (!menuContainer) {
+  const main = document.querySelector(".main-small")
+  const dispalyContainer = document.getElementById("display-modal")
+  console.log(main)
+  if (!dispalyContainer) {
     return
   }
-  while (menuContainer.firstChild) {
-      menuContainer.removeChild(menuContainer.firstChild);
+  while (dispalyContainer.firstChild) {
+    dispalyContainer.removeChild(dispalyContainer.firstChild);
     }
-    body.removeChild(menuContainer)
+    main.removeChild(dispalyContainer)
 }
 
 function renderForm() {
