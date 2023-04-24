@@ -4,7 +4,7 @@ import projectModal from "./modalPages/projectModal"
 import noteModal from "./modalPages/noteModal"
 import { firstLoadModal } from "../functions/firstLoad"
 import { renderForm, renderModal } from "../functions/render"
-import { createTask, createProject } from "../functions/tasks"
+import { createTask, createProject, createNotes } from "../functions/tasks"
 import { firstLoad } from "../functions/firstLoad"
 
 function modalAdd() {
@@ -36,7 +36,8 @@ function modalAdd() {
     })
 
     addNote.addEventListener("click", function() {
-
+        renderModal()
+        noteForm(smallMain)
     })
 }
 
@@ -196,95 +197,53 @@ function projectForm(parent) {
 
     }
 
+function noteForm(parent) {
+    const form = document.createElement('form');
+    form.classList.add('display', "display-note");
+    form.id = 'display-modal';
+    form.style.display = "grid"
+
+    const textArea = document.createElement('textarea');
+    textArea.name = 'note';
+    textArea.id = 'note';
+    textArea.placeholder = 'New Note:';
+
+    const textDes = document.createElement('textarea');
+    textDes.name = 'note-des';
+    textDes.id = 'note-des';
+    textDes.placeholder = 'Note Description:';
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('display-note-buttons');
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.classList.add('display-submit');
+    submitButton.textContent = 'Submit';
+
+    buttonsContainer.appendChild(submitButton);
+
+    form.appendChild(textArea);
+    form.appendChild(textDes);
+    form.appendChild(buttonsContainer);
+
+    parent.appendChild(form);
+
+    function onSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        console.log(formData.get('note'), formData.get('note-des'))
+        createNotes(formData.get('note'), formData.get('note-des'));
+        form.reset();
+        const modal = document.querySelector(".modal");
+        modal.style.display = "none";
+        firstLoad();
+        form.removeEventListener('submit', onSubmit, true);
+    }
+    
+    form.addEventListener('submit', onSubmit, true);
+
+}
 
 
-// function modalPage() {
-//     const body = document.querySelector("body")
-//     const myModal = document.createElement("div")
-//     const modalContent = document.createElement("div")
-//     const header = document.createElement("div")
-//     const headerTitle = document.createElement("div")
-//     const leftMenu = document.createElement("div")
-//     const displayMenu = document.createElement("form")
-//     const span = document.createElement("span")
-
-//     myModal.classList.add("modal")
-//     modalContent.classList.add("modal-content", "main", "main-small")
-//     header.classList.add("header", "header-small")
-//     headerTitle.classList.add("header-title")
-//     leftMenu.classList.add("left-menu", "left-menu-small")
-//     displayMenu.classList.add("display-menu-small")
-//     addForm(displayMenu)
-//     span.classList.add("close")
-
-
-//     headerTitle.textContent = "Create a new..."
-//     span.textContent = "close" 
-
-//     body.appendChild(myModal)
-//     myModal.appendChild(modalContent)
-//     modalContent.appendChild(header)
-//     modalContent.appendChild(leftMenu)
-//     modalContent.appendChild(displayMenu)
-//     header.appendChild(headerTitle)
-//     header.appendChild(span)
-//     menuModal()
-//     todoSelect()
-//     projectSelect()
-//     noteSelect()
-// }
-
-// function menuModal() {
-//     const leftMenuSmall = document.querySelector(".left-menu-small")
-//     const toDo = document.createElement("div")
-//     const project = document.createElement("div")
-//     const note = document.createElement("div")
-
-//     toDo.classList.add("left-menu-title-small")
-//     project.classList.add("left-menu-title-small")
-//     note.classList.add("left-menu-title-small")
-
-//     toDo.setAttribute("id", "todoModal")
-//     project.setAttribute("id", "projectModal")
-//     note.setAttribute("id", "noteModal")
-
-//     toDo.textContent = "To Do" 
-//     project.textContent = "Project" 
-//     note.textContent = "Note" 
-
-//     leftMenuSmall.appendChild(toDo)
-//     leftMenuSmall.appendChild(project)
-//     leftMenuSmall.appendChild(note)
-// }
-
-// function addForm(form) {
-//     form.setAttribute('id', 'myForm');
-// }
-
-// function todoSelect() {
-//     const todoModal = document.querySelector("#todoModal")
-//     todoModal.addEventListener("click", function() {
-//         renderForm()
-//         toDoModal()
-//         console.log(todoModal)
-//     })
-// }
-
-// function projectSelect() {
-//     const projectMod = document.querySelector("#projectModal")
-//     projectMod.addEventListener("click", function() {
-//         renderForm()
-//         projectModal()
-//         console.log(projectMod)
-//     })
-// }
-
-// function noteSelect() {
-//     const noteMod = document.querySelector("#noteModal")
-//     noteMod.addEventListener("click", function() {
-//         renderForm()
-//         noteModal()
-//         console.log(noteMod)
-//     })
-// }
 export default modalAdd

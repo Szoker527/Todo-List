@@ -87,9 +87,9 @@ function addTask(obj) {
     // localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
-// function addNote(obj) {
-//     noteArray.push(obj)
-// }
+function addNote(obj) {
+    noteArray.push(obj)
+}
 
 function addProject(title) {
     projectArray.push(title)
@@ -178,4 +178,6 @@ function todayTasks() {
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export {returnTaskArray, nextWeek, todayTasks, findProjectTitles, addTask, addProject}
+export {returnTaskArray, nextWeek, todayTasks,
+     findProjectTitles, addTask, addProject,
+     addNote}
