@@ -81,11 +81,11 @@ function returnTaskArray() {
     return taskArray
 }
 
-// function addTask(obj) {
-//     dateArray.push(obj)
-//     addIdToTask()
-//     localStorage.setItem("tasks", JSON.stringify(dateArray));
-// }
+function addTask(obj) {
+    taskArray.push(obj)
+    addIdToTask()
+    // localStorage.setItem("tasks", JSON.stringify(taskArray));
+}
 
 // function addNote(obj) {
 //     noteArray.push(obj)
@@ -114,11 +114,11 @@ function returnTaskArray() {
 //     dateArray = storageArray
 // }
 
-// function addIdToTask() {
-//     dateArray.forEach(function(obj, index) {
-//         obj.id = index
-//     });
-// }
+function addIdToTask() {
+    taskArray.forEach(function(obj, index) {
+        obj.id = index
+    });
+}
 
 function findProjectTitles(projectName) {
     const newstring = projectName.replace(/-/g, ' ')
@@ -178,4 +178,4 @@ function todayTasks() {
 // export {addTask, findProjectTitles, findDateArray,
 //      displayAllProjectTitles, dateArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
-export {returnTaskArray, nextWeek, todayTasks, findProjectTitles}
+export {returnTaskArray, nextWeek, todayTasks, findProjectTitles, addTask}

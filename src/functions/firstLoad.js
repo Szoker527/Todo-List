@@ -15,8 +15,9 @@ function firstLoad() {
     displayTasks(returnTaskArray())
 }
 
-// function firstLoadModal() {
-//     toDoModal()
-// }
+function firstLoadModal() {
+    const toDoModal = document.getElementById("display-todo")
+    toDoModal.style.display = "grid"
+}
 
-export {firstLoad}
+export {firstLoad, firstLoadModal}

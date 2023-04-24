@@ -26,6 +26,7 @@ function displayTasks(array) {
   
     for (let i = 0; i < array.length; i++) {
         const date = new Date(array[i].date);
+        // console.log(array[i].date)
         const formattedDate = format(date, 'MMM d');
         const clonedNode = originalNode.cloneNode(true);
         clonedNode.id = 'id-' + i;

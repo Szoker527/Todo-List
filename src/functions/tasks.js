@@ -24,6 +24,7 @@ import {addTask, findProjectTitles, findDateArray,
 
 function createTask(date, title, description, priority) {
     // const result = format(new Date(date), 'yyyy-MM-dd')
+    // console.log(date, title, description, priority)
     const projectNameObj = currentProjectName
     const newObj = new tasks(projectNameObj.toLowerCase(), title, description, priority, date) 
     addTask(newObj)

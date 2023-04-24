@@ -44,7 +44,7 @@
             cursor: pointer;
         }
 
-    .display-todo {
+    #display-todo {
         display: none;
         grid-template-rows: 1fr 3fr 1fr 1fr;
         padding: 20px;
@@ -120,34 +120,34 @@
                 font-family: "Ubuntu-Light", sans-serif;
             }
 
-    .display-project {
+    #display-project {
         display: none;
         grid-template-rows: 4fr 1fr;
         padding: 25px;
     }
 
-        .display-project textarea {
+        #display-project textarea {
             font-size: 1.2rem;
         }
 
-        .display-project-buttons {
+        #display-project-buttons {
             display: flex;
             align-items: center;
             justify-content: flex-end;
         }
 
 
-    .display-note {
+    #display-note {
         display: none;
         grid-template-rows: 4fr 1fr;
         padding: 25px;
     }
 
-        .display-note textarea {
+        #display-note textarea {
             font-size: 1.2rem;
         }
 
-        .display-note-buttons {
+        #display-note-buttons {
             display: flex;
             align-items: center;
             justify-content: flex-end;
