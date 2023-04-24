@@ -15,9 +15,10 @@
         <li id="home">Home</li>
         <li id="today">Today</li>
         <li id="week">Week</li>
-        <ul>Projects</ul>
+        <ul>Projects
           <li id="work" class="project-content">Work</li>
           <li id="relax" class="project-content">Relax</li>
+        </ul>
         <li id="notes">Notes</li>
         <button class="menu-button">
           <span>+</span>
@@ -48,37 +49,37 @@
           <li>Note</li>
         </ul>
 
-        <form class="display display-todo">
-          <textarea name="" id="" placeholder="Title:"></textarea>
-          <textarea name="" id="" placeholder="Description: e.g internet, phone, rent."></textarea>
+        <form class="display" id="display-todo" autocomplete="off">
+          <textarea name="titles" id="display-title" placeholder="Title:" required></textarea>
+          <textarea name="descriptions" id="display-description" placeholder="Description: e.g internet, phone, rent." required></textarea>
           <div class="display-date">
             <span>Due Date:</span>
-            <input type="date" name="" id="">
+            <input type="date" name="date" id="due-date" required>
           </div>
           <div class="display-todo-buttons">
             <div class="radio-buttons">
               <span>Priority:</span>
-              <input type="radio" id="low" name="radio-group">
+              <input type="radio" id="low" name="priority" value="low">
               <label for="low" class="radio-button">Low</label>
               
-              <input type="radio" id="medium" name="radio-group">
+              <input type="radio" id="medium" name="priority" value="medium">
               <label for="medium" class="radio-button">Medium</label>
               
-              <input type="radio" id="high" name="radio-group">
+              <input type="radio" id="high" name="priority" value="high">
               <label for="high" class="radio-button">High</label>
             </div>
             <button type="submit" class="display-submit">Submit</button>
           </div>
         </form>
 
-        <form class="display display-project">
+        <form class="display" id="display-project">
           <textarea name="" id="" placeholder="New Project Name:"></textarea>
           <div class="display-project-buttons">
             <button type="submit" class="display-submit">Submit</button>
           </div>
         </form>
 
-        <form class="display display-note">
+        <form class="display" id="display-note">
           <textarea name="" id="" placeholder="New Note:"></textarea>
           <div class="display-note-buttons">
             <button type="submit" class="display-submit">Submit</button>
