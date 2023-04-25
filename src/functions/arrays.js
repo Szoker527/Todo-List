@@ -97,22 +97,20 @@ function addProject(title) {
     console.log(projectArray)
 }
 
-// function removeFromArray(id) {
-//     let indexToRemove = dateArray.findIndex(obj => obj.id === id);
-//     // If the object is found in the array, remove it
-//     if (indexToRemove !== -1) {
-//         dateArray.splice(indexToRemove, 1);
-//     }
-//     addIdToTask()
-//     render()
-//     menu()
-//     defaultProjectName()
-//     home()
-//     updateStorage()
-// }
+function removeFromArray(id) {
+
+    let indexToRemove = taskArray.findIndex(obj => obj.id === id);
+    console.log(id)
+    // If the object is found in the array, remove it
+    if (indexToRemove !== -1) {
+        taskArray.splice(indexToRemove, 1);
+    }
+    addIdToTask()
+    console.log(taskArray)
+}
 
 // function setStorageArray(storageArray) {
-//     dateArray = storageArray
+//     taskArray = storageArray
 // }
 
 function addIdToTask() {
@@ -134,9 +132,9 @@ function findProjectTitles(projectName) {
     return newArray
 }
 
-// function findDateArray(date) {
+// function findtaskArray(date) {
 //     const newArray = [];
-//     dateArray.forEach(function(obj) {
+//     taskArray.forEach(function(obj) {
 //         const newobjArray = obj.date
 //         if(newobjArray === date) {
 //             newArray.push(obj)
@@ -176,9 +174,9 @@ function todayTasks() {
     return todayArray;
   }
 
-// export {addTask, findProjectTitles, findDateArray,
-//      displayAllProjectTitles, dateArray, nextWeek,
+// export {addTask, findProjectTitles, findtaskArray,
+//      displayAllProjectTitles, taskArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
 export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
-     addNote, returnProjectArray}
+     addNote, returnProjectArray, removeFromArray}
