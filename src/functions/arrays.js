@@ -74,11 +74,19 @@ let taskArray = [
     }
 ]
 
-const projectArray = []
+const projectArray = ["free time"]
 const noteArray = []
 
 function returnTaskArray() {
     return taskArray
+}
+
+function returnProjectArray() {
+    if(!projectArray) {
+        return
+    }
+    const uniqueNames = [...new Set(projectArray)];
+    return uniqueNames;
 }
 
 function addTask(obj) {
@@ -92,7 +100,8 @@ function addNote(obj) {
 }
 
 function addProject(title) {
-    projectArray.push(title)
+    newTitle = title.toLowerCase().replace(/\s+/g, "-");
+    projectArray.push(newTitle)
     console.log(projectArray)
 }
 
@@ -145,12 +154,12 @@ function findProjectTitles(projectName) {
 //     return newArray
 // }
 
-// function displayAllProjectTitles() {
-//     dateArray.forEach(function(obj) {
-//         projectArray.push(obj.project)
-//     });
-//     return projectArray
-// }
+function displayAllProjectTitles() {
+    taskArray.forEach(function(obj) {
+        projectArray.push(obj.project)
+    });
+    return projectArray
+}
 
 function nextWeek() {
     const today = new Date();
@@ -180,4 +189,4 @@ function todayTasks() {
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
 export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
-     addNote}
+     addNote, returnProjectArray}

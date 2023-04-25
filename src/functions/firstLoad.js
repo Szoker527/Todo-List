@@ -1,8 +1,8 @@
 // import home from "../pages/home"
 // import menu from "../pages/menu"
 // import toDoModal from "../pages/modalPages/toDoModal"
-import { returnTaskArray } from "./arrays"
-import displayTasks from "./displayTasks"
+import { returnTaskArray, returnProjectArray } from "./arrays"
+import { displayTasks, displayProjects } from "./displayTasks"
 
 // When user opens website this will be the first thing that will be displayed.
 
@@ -10,9 +10,8 @@ function firstLoad() {
     // const retrievedTasks = JSON.parse(localStorage.getItem("tasks"));
     // console.log(retrievedTasks)
     // setStorageArray(retrievedTasks)
-    // home()
-    // menu()
     displayTasks(returnTaskArray())
+    displayProjects(returnProjectArray())
 }
 
 function firstLoadModal() {

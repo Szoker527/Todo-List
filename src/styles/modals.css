@@ -57,12 +57,17 @@
             font-size: 1.3rem;
         }
             .display-date input {
+                margin-left: 10px;
                 background-color: #fff;
                 color: var(--primary-color);
                 border: 1px solid var(--primary-color);
                 padding: 3px 3px;
                 font-size: 1.2rem;
             }
+
+            .display-date input:focus {
+                border: 2px solid blue;
+              }
 
         .display-todo-buttons {
             display: flex;
@@ -72,6 +77,7 @@
 
             .radio-buttons span {
                 font-size: 1.3rem;
+                margin-right: 10px;
             }
 
             /* Hide the default radio input */

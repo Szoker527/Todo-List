@@ -1,9 +1,16 @@
 
 
 function render() {
-    const display = document.getElementById("display")
-    while (display.childNodes.length > 1) {
+    const display = document.getElementById("display");
+    const firstNode = display.firstChild;
+  
+     while (display.lastChild !== firstNode) {
       display.removeChild(display.lastChild);
+    }
+    const project = document.getElementById("project-display");
+    const children = project.childNodes;
+    for (let i = children.length - 1; i >= 2; i--) {
+      project.removeChild(children[i]);
     }
 }
 

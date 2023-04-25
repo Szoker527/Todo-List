@@ -39,53 +39,23 @@ function displayTasks(array) {
   }
 
 
+function displayProjects(array) {
+  const nodeContainer = document.getElementById("projects-display")
 
-// function displayTasks(parent, array) {
-//     let arrayTopic = array;
-//     arrayTopic.forEach(function(obj) {
-//         const objContainer = document.createElement("div")
+  const children = nodeContainer.childNodes;
+  for (let i = children.length - 1; i >= 2; i--) {
+    nodeContainer.removeChild(children[i]);
+  }
 
-//         objContainer.classList.add("display-menu-obj")
-//         objContainer.setAttribute("id", `task-${obj.id}`)
+  for (let i = 0; i < array.length; i++) {
+    const name = array[i];
+    const listItem = document.createElement("li");
+    listItem.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+    listItem.classList.add("project-content")
+    listItem.id = name.toLowerCase().replace(/\s+/g, "-"); // Convert name to lowercase and replace any spaces with hyphens to create an ID
+    nodeContainer.appendChild(listItem); // Append the li element to the parent element
+  }
 
-//         parent.appendChild(objContainer)
+}
 
-//         const date = new Date(obj.date);
-//         const formattedDate = format(date, 'MMM d');
-
-//         createTaskLook(obj.priority, obj.title, formattedDate, objContainer, obj)
-//     });
-    
-// }
-
-// function createTaskLook(priority, title, date, parent, obj) {
-//     const objTitle = document.createElement("div")
-//     const objPriority = document.createElement("div")
-//     const objDate = document.createElement("div")
-
-//     objTitle.classList.add("tasks-obj-title")
-//     objDate.classList.add("display-menu-date")
-
-//     if (priority === "low") {
-//         objPriority.classList.add("display-menu-priority-low")
-//     }
-//     if (priority === "medium") {
-//         objPriority.classList.add("display-menu-priority-medium")
-//     }
-//     if (priority === "high") {
-//         objPriority.classList.add("display-menu-priority-high")
-//     }
-
-//     objTitle.textContent = title
-//     objDate.textContent = date
-
-//     parent.appendChild(objPriority)
-//     // inputCheckBox("tasks-obj-check", parent, obj)
-//     parent.appendChild(objTitle)
-//     inputDetail(parent, "tasks-obj-detail", "detail", obj)
-//     parent.appendChild(objDate)
-//     inputImgEdit("tasks-obj-edit", parent, edit, obj)
-//     inputImgTrash("tasks-obj-trash", parent, trash, obj)
-// }
-
-export default displayTasks
+export { displayTasks, displayProjects}

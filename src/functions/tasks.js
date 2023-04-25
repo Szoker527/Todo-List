@@ -40,10 +40,10 @@ function createProject(title) {
     addProject(title)
 }
 
-function defaultProjectName() {
-    currentProjectName = "work"
-    return currentProjectName
-}
+// function defaultProjectName() {
+//     currentProjectName = "work"
+//     return currentProjectName
+// }
 
 function addedProjectName(name) {
     currentProjectName = name;
@@ -51,4 +51,4 @@ function addedProjectName(name) {
 
 
 export {createTask, createNotes, createProject,
-     defaultProjectName, addedProjectName}
+      addedProjectName}
