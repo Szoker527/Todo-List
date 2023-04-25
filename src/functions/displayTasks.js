@@ -44,7 +44,15 @@ function displayTasks(array) {
           if (child.id.toLowerCase() === 'edit-icon') {
             child.addEventListener('click', function(event) {
               modalEdit(obj)
-              console.log()
+            });
+          }
+        }
+
+        for (let i = 0; i < clonedNodeChildren.length; i++) {
+          const child = clonedNodeChildren[i];
+          if (child.tagName.toLowerCase() === 'button') {
+            child.addEventListener('click', function(event) {
+                modalDetail(obj)
             });
           }
         }

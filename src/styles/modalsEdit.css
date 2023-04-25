@@ -1,4 +1,4 @@
-.modal-detail {
+.modal-edit {
     display: none;
     position: fixed;
     z-index: 1;
@@ -13,7 +13,7 @@
 
 
 
-.main-detail {
+.main-edit {
     height: 20rem;
     width: 35rem;
     background-color: #fefefe;
@@ -22,25 +22,8 @@
 }
 
 
-.display-task {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .tasks-title {
-    flex: 1;
-    font-size: 2.5rem;
-  }
-
-  .task-info {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 5px 0;
-  }
-  
-  .task-info > span {
-    font-weight: bold;
-    margin-right: 10px;
-  }
+.edit-display {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+}
