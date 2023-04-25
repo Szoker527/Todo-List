@@ -74,7 +74,7 @@ let taskArray = [
     }
 ]
 
-const projectArray = ["free time"]
+const projectArray = ["work", "relax"]
 const noteArray = []
 
 function returnTaskArray() {
@@ -100,7 +100,7 @@ function addNote(obj) {
 }
 
 function addProject(title) {
-    newTitle = title.toLowerCase().replace(/\s+/g, "-");
+    const newTitle = title.toLowerCase().replace(/\s+/g, "-");
     projectArray.push(newTitle)
     console.log(projectArray)
 }

@@ -3,6 +3,7 @@ import { addTask, findProjectTitles, findDateArray,
 import { inputType, inputBtn, inputImgTrash, inputImgEdit,
      inputCheckBox, inputDetail } from "./inputs"
 import { format } from "date-fns";
+import { addedProjectName } from "./tasks";
 import trash from "../assets/images/trash.svg"
 import edit from "../assets/images/edit.svg"
 
@@ -42,18 +43,27 @@ function displayTasks(array) {
 function displayProjects(array) {
   const nodeContainer = document.getElementById("projects-display")
 
+
   const children = nodeContainer.childNodes;
-  for (let i = children.length - 1; i >= 2; i--) {
+  for (let i = children.length - 1; i >= 1; i--) {
     nodeContainer.removeChild(children[i]);
   }
 
   for (let i = 0; i < array.length; i++) {
     const name = array[i];
     const listItem = document.createElement("li");
+
     listItem.textContent = name.charAt(0).toUpperCase() + name.slice(1);
     listItem.classList.add("project-content")
     listItem.id = name.toLowerCase().replace(/\s+/g, "-"); // Convert name to lowercase and replace any spaces with hyphens to create an ID
     nodeContainer.appendChild(listItem); // Append the li element to the parent element
+
+    listItem.addEventListener('click', function() {
+      displayTasks(findProjectTitles(this.id))
+      addedProjectName(this.id)
+      console.log(`Clicked div with id: ${this.id}`);
+    });
+
   }
 
 }
