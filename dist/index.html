@@ -31,8 +31,8 @@
           <div class="task-title">Title</div>
           <button class="task-details">DETAILS</button>
           <div class="task-date">date</div>
-          <img src="../src/assets/images/edit.svg" class="icon" alt="" srcset="">
-          <img src="../src/assets/images/trash.svg" class="icon" alt="" srcset="">
+          <img src="../src/assets/images/edit.svg" class="icon" id="edit-icon" alt="" srcset="">
+          <img src="../src/assets/images/trash.svg" class="icon" id="trash-icon" alt="" srcset="">
         </div>
       </div>
     </main>
@@ -85,6 +85,34 @@
             <button type="submit" class="display-submit">Submit</button>
           </div>
         </form> -->
+        
+      </div>
+    </div>
+
+    <div class="modal-edit">
+      <div class="main-edit main">
+        <form class="edit-display" id="display-edit" autocomplete="off">
+          <textarea name="titles" id="display-title" placeholder="Title:" required></textarea>
+          <textarea name="descriptions" id="display-description" placeholder="Description: e.g internet, phone, rent." required></textarea>
+          <div class="display-date">
+            <span>Due Date:</span>
+            <input type="date" name="date" id="due-date" required>
+          </div>
+          <div class="display-todo-buttons">
+            <div class="radio-buttons">
+              <span>Priority:</span>
+              <input type="radio" id="low" name="priority" value="low">
+              <label for="low" class="radio-button">Low</label>
+              
+              <input type="radio" id="medium" name="priority" value="medium">
+              <label for="medium" class="radio-button">Medium</label>
+              
+              <input type="radio" id="high" name="priority" value="high">
+              <label for="high" class="radio-button">High</label>
+            </div>
+            <button type="submit" class="display-submit">Submit</button>
+          </div>
+        </form> 
       </div>
     </div>
 

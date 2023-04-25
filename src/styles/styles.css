@@ -180,6 +180,18 @@ body {
         grid-template-columns: 10px 75px 1fr 150px 100px 60px 60px;
     }
 
+        .low span {
+            background-color: green;
+        }
+
+        .medium span {
+            background-color: orange;
+        }
+
+        .high span {
+            background-color: red;
+        }
+
         .task-color {
             background-color: red;
             width: 100%;
@@ -253,3 +265,11 @@ textarea:focus {
     border: none;
     outline: none;
   }
+
+.hidden {
+    display: none;
+}
+
+.open {
+    display: grid;
+}

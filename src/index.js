@@ -1,5 +1,6 @@
 import style from "./styles/styles.css"
-import modals from "./styles/modals.css"
+import modalsAdd from "./styles/modalsAdd.css"
+import modalsDetail from "./styles/modalsDetail.css"
 import { firstLoad } from "./functions/firstLoad"
 import { render } from "./functions/render"
 import { displayTasks, displayProjects } from "./functions/displayTasks"

@@ -6,6 +6,8 @@ import { format } from "date-fns";
 import { addedProjectName } from "./tasks";
 import trash from "../assets/images/trash.svg"
 import edit from "../assets/images/edit.svg"
+import modalDetail from "../pages/modalDetail";
+import modalEdit from "../pages/modalEdit";
 
 function displayTasks(array) {
     const nodeContainer = document.getElementById('display');
@@ -27,13 +29,26 @@ function displayTasks(array) {
   
     for (let i = 0; i < array.length; i++) {
         const date = new Date(array[i].date);
-        // console.log(array[i].date)
         const formattedDate = format(date, 'MMM d');
         const clonedNode = originalNode.cloneNode(true);
-        clonedNode.id = 'id-' + i;
+        clonedNode.id = i;
+        clonedNode.classList.add(array[i].priority)
         clonedNode.querySelector('.task-title').textContent = array[i].title;
         clonedNode.querySelector('.task-date').textContent = formattedDate;
         nodeContainer.appendChild(clonedNode);
+        const clonedNodeChildren = clonedNode.children;
+        const obj = array[i]
+        
+        for (let i = 0; i < clonedNodeChildren.length; i++) {
+          const child = clonedNodeChildren[i];
+          if (child.id.toLowerCase() === 'edit-icon') {
+            child.addEventListener('click', function(event) {
+              modalEdit(obj)
+              console.log()
+            });
+          }
+        }
+
     }
   
     originalNode.style.display = "none";

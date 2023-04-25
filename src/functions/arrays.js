@@ -22,14 +22,6 @@ let taskArray = [
         description: "wdadadadadaada",
         priority: "low",
         date: "2014-02-03",
-        id: 0
-    },
-    {
-        project: "work",
-        title: "What to do",
-        description: "wdadadadadaada",
-        priority: "low",
-        date: "2014-02-03",
         id: 1
     },
     {
