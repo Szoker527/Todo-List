@@ -10,6 +10,7 @@ import edit from "../assets/images/edit.svg"
 import modalDetail from "../pages/modalDetail";
 import modalEdit from "../pages/modalEdit";
 import { firstLoad } from "./firstLoad";
+import { deleteSelect } from "..";
 
 let currentDisplay = "home"
 
@@ -105,6 +106,8 @@ function displayProjects(array) {
     listItem.addEventListener('click', function() {
       displayTasks(findProjectTitles(this.id))
       addedProjectName(this.id)
+      deleteSelect()
+      listItem.classList.add("selected")
       console.log(`Clicked div with id: ${this.id}`);
     });
 

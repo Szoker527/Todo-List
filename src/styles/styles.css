@@ -117,6 +117,22 @@ body {
         cursor: pointer;
     }
 
+    .menu-large li:hover {
+        font-family: "Ubuntu-Medium", sans-serif;
+      }
+
+      .menu-large li:hover::before {
+        content: "// ";
+      }
+
+      .selected {
+        font-family: "Ubuntu-Medium", sans-serif;
+      }
+
+      .selected::before {
+        content: "// ";
+      }
+
     .menu-large ul {
         padding-left: 80px;
     }

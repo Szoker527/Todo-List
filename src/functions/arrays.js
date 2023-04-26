@@ -13,7 +13,7 @@ let taskArray = [
         title: "What to do",
         description: "wdadadadadaada",
         priority: "low",
-        date: "2014-02-03",
+        date: alwaysToday(),
         id: 0
     },
     {
@@ -21,7 +21,7 @@ let taskArray = [
         title: "What to do",
         description: "wdadadadadaada",
         priority: "low",
-        date: "2014-02-03",
+        date: threeDaysLater(),
         id: 1
     },
     {
@@ -29,7 +29,7 @@ let taskArray = [
         title: "Play games",
         description: "xxxxxxxxxxxxxxxxx",
         priority: "medium",
-        date: "2014-01-04",
+        date: alwaysToday(),
         id: 2
     },
     {
@@ -37,7 +37,7 @@ let taskArray = [
         title: "Report about dolphins",
         description: "xxxxxxxxxxxxxxxxx",
         priority: "high",
-        date: "2014-03-05",
+        date: threeDaysLater(),
         id: 3
     },
     {
@@ -45,7 +45,7 @@ let taskArray = [
         title: "Talk to Jarret",
         description: "xxxxxxxxxxxxxxxxx",
         priority: "high",
-        date: "2023-04-25",
+        date: alwaysToday(),
         id: 4
     },
     {
@@ -53,7 +53,7 @@ let taskArray = [
         title: "Bring Boss coffe",
         description: "gggggg",
         priority: "low",
-        date: "2023-04-27",
+        date: threeDaysLater(),
         id: 5
     },
     {
@@ -61,7 +61,7 @@ let taskArray = [
         title: "Delete xxx files",
         description: "gggggg",
         priority: "high",
-        date: "2023-04-23",
+        date: threeDaysLater(),
         id: 6
     }
 ]
@@ -196,6 +196,18 @@ function notesTasks() {
     return noteArray
 }
 
+
+function threeDaysLater() {
+    const dateThreeDaysLater = addDays(new Date(), 3);
+    const formattedDateThreeDaysLater = format(dateThreeDaysLater, 'yyyy-MM-dd');
+    return formattedDateThreeDaysLater
+}
+
+function alwaysToday() {
+    const today = new Date();
+    const formattedToday = format(today, 'yyyy-MM-dd');
+    return formattedToday
+}
 
 // export {addTask, findProjectTitles, findtaskArray,
 //      displayAllProjectTitles, taskArray, nextWeek,
