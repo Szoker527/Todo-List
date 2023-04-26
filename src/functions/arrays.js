@@ -67,7 +67,25 @@ let taskArray = [
 ]
 
 const projectArray = ["work", "relax"]
-const noteArray = []
+
+const noteArray = [
+    {        
+        title: "Delete xxx files",
+        description: "ggggggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+    },
+    {        
+        title: "daaaaaaaaaasdas",
+        description: "xxxxxx"
+    },
+    {        
+        title: "tatata",
+        description: "bbbbbb"
+    },
+    {        
+        title: "cxzczxczx",
+        description: "dasdasdsssssssssssssssssssssssssssssssssssssssss"
+    }
+]
 
 function returnTaskArray() {
     return taskArray
@@ -174,9 +192,15 @@ function todayTasks() {
     return todayArray;
   }
 
+function notesTasks() {
+    return noteArray
+}
+
+
 // export {addTask, findProjectTitles, findtaskArray,
 //      displayAllProjectTitles, taskArray, nextWeek,
 //      addNote, noteArray, addProject, removeFromArray, setStorageArray}
 export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
-     addNote, returnProjectArray, removeFromArray}
+     addNote, returnProjectArray, removeFromArray,
+     notesTasks}

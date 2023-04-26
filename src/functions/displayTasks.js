@@ -17,6 +17,12 @@ function displayTasks(array) {
     const nodeContainer = document.getElementById('display');
     const originalNode = document.getElementById('original');
     originalNode.style.display = "grid";
+    nodeContainer.style.display = "block"
+
+    if (document.querySelector(".display-large-note")) {
+      nodeContainer.classList.remove("display-large-note")
+      nodeContainer.classList.add("display-large")
+    }
 
     if (!originalNode) {
       console.error("Element with id 'original' not found");
@@ -105,4 +111,67 @@ function displayProjects(array) {
   }
 }
 
-export { displayTasks, displayProjects}
+function displayNotes(array) {
+  const nodeContainer = document.getElementById('display');
+  const originalNode = document.getElementById('original');
+  const col1 = document.createElement("div")
+  const col2 = document.createElement("div")
+  const col3 = document.createElement("div")
+  let colNumber = 1
+  nodeContainer.style.display = "grid"
+
+  
+  while (nodeContainer.lastChild && nodeContainer.lastChild !== originalNode) {
+    nodeContainer.removeChild(nodeContainer.lastChild);
+  }
+  if (document.querySelector(".display-large")) {
+    nodeContainer.classList.remove("display-large")
+  }
+  nodeContainer.classList.add("display-large-note")
+
+  nodeContainer.appendChild(col1)
+  col1.classList.add("col-1", "columns")
+  nodeContainer.appendChild(col2)
+  col2.classList.add("col-2", "columns")
+  nodeContainer.appendChild(col3)
+  col3.classList.add("col-3", "columns")
+
+  
+  for (let i = 0; i < array.length; i++) {
+    const obj = array[i];
+    const noteContaier = document.createElement("div");
+    const noteTitle = document.createElement("div")
+    const noteDetail = document.createElement("div")
+    
+    noteTitle.textContent = obj.title
+    noteDetail.textContent = obj.description
+
+    noteContaier.classList.add("note-task")
+
+    noteContaier.appendChild(noteTitle)
+    noteContaier.appendChild(noteDetail)
+
+    noteTitle.setAttribute("contenteditable", "true")
+    noteDetail.setAttribute("contenteditable", "true")
+    noteTitle.setAttribute("spellcheck", "false")
+    noteDetail.setAttribute("spellcheck", "false")
+    document.querySelector(`.col-${colNumber}`).appendChild(noteContaier)
+    colNumber++
+    if (colNumber === 4) {
+      colNumber = 1
+    }
+
+    noteTitle.addEventListener("blur", (event) => {
+      const newTitle = event.target.textContent;
+      obj.title = newTitle;
+    });
+
+    noteDetail.addEventListener("blur", (event) => {
+      const newDescription = event.target.textContent;
+      obj.description = newDescription;
+    });
+
+  }
+}
+
+export { displayTasks, displayProjects, displayNotes}
