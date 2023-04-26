@@ -24,6 +24,7 @@
 
 
 .edit-display {
+    position: relative;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr 1fr;
 }

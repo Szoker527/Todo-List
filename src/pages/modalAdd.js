@@ -140,6 +140,18 @@ function toDoForm(parent) {
 
     parent.appendChild(form);
 
+    const img = document.createElement("img");
+    img.setAttribute("src", "../src/assets/images/x.svg");
+    img.setAttribute("alt", "");
+    img.classList.add("close");
+    parent.appendChild(img);
+
+    img.addEventListener("click", function(event) {
+        const modal = document.querySelector(".modal");
+        form.removeEventListener('submit', onSubmit, true);
+        modal.style.display = "none";
+    })
+
     function onSubmit(event) {
        event.preventDefault();
        const formData = new FormData(form);
@@ -180,6 +192,19 @@ function projectForm(parent) {
     form.appendChild(buttonsContainer);
 
     parent.appendChild(form);
+
+    const img = document.createElement("img");
+    img.setAttribute("src", "../src/assets/images/x.svg");
+    img.setAttribute("alt", "");
+    img.classList.add("close");
+    parent.appendChild(img);
+
+    img.addEventListener("click", function(event) {
+        const modal = document.querySelector(".modal");
+        form.removeEventListener('submit', onSubmit, true);
+        modal.style.display = "none";
+    })
+
 
     function onSubmit(event) {
         event.preventDefault();
@@ -228,6 +253,18 @@ function noteForm(parent) {
     form.appendChild(buttonsContainer);
 
     parent.appendChild(form);
+
+    const img = document.createElement("img");
+    img.setAttribute("src", "../src/assets/images/x.svg");
+    img.setAttribute("alt", "");
+    img.classList.add("close");
+    parent.appendChild(img);
+
+    img.addEventListener("click", function(event) {
+        const modal = document.querySelector(".modal");
+        form.removeEventListener('submit', onSubmit, true);
+        modal.style.display = "none";
+    })
 
     function onSubmit(event) {
         event.preventDefault();

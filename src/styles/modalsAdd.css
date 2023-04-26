@@ -12,6 +12,7 @@
 }
 
 .main-small {
+    position: relative;
     grid-template-columns: 170px 1fr;
     grid-template-rows: 63px 1fr;
     height: 25rem;

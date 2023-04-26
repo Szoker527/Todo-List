@@ -12,7 +12,12 @@ function modalEdit(obj) {
     editDescription.textContent = obj.description
     editDate.value = obj.date
     editRadio.checked = true;
-
+    
+    const close = document.querySelector(".close")
+    close.addEventListener("click", function(event) {
+        form.removeEventListener('submit', onSubmit, true);
+        modal.style.display = "none";
+    })
 
     function onSubmit(event) {
         event.preventDefault();
