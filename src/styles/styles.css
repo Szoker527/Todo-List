@@ -110,6 +110,7 @@ body {
     font-size: 2.5rem;
     gap: 10px;
     padding: 50px 20px;
+    overflow: auto;
 }
 
     .menu-large li {
@@ -188,6 +189,7 @@ body {
     .empty-title {
         justify-self: center;
         font-family: "Ubuntu-Medium", sans-serif;
+        position: absolute;
     }
 
     .task-container {
@@ -265,11 +267,11 @@ body {
 
           .note-task {
             margin: 20px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-family: 'Ubuntu-Light';
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
             padding: 10px;
             word-break: break-all;
             border: none;

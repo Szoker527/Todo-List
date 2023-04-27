@@ -1,5 +1,6 @@
 import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
+import { id } from 'date-fns/locale'
 
 // Here are functions that add objects to arrays and store them.
 let taskArray = [
@@ -63,32 +64,39 @@ let taskArray = [
 
 const projectArray = ["work", "relax"]
 
-const noteArray = [
+let noteArray = [
     {        
+        id: 0,
         title: "Buy Groceries",
-        description: "Pick up groceries from the supermarket: milk, bread, eggs, butter, cheese, vegetables and fruit."
+        description: "Pick up groceries from the supermarket: milk, bread, eggs, butter, cheese, vegetables and fruit.",
     },
     {        
+        id: 1,
         title: "Finish Project",
-        description: "Complete the coding project by the end of the week. Finish writing documentation and run a final test on the program."
+        description: "Complete the coding project by the end of the week. Finish writing documentation and run a final test on the program.",
     },
     {        
+        id: 2,
         title: "Call Mom",
         description: "Give mom a call to catch up on life. Ask her about her day and share some news about your recent activities."
     },
     {        
+        id: 3,
         title: "Schedule Dentist Appointment",
         description: "Make an appointment to see the dentist for a check-up and cleaning. Check the calendar for available dates and times."
     },
     {        
+        id: 4,
         title: "Plan Weekend Getaway",
         description: "Organize a weekend trip to the beach or mountains. Look up hotels or vacation rentals, make travel arrangements and plan activities."
     },
     {        
+        id: 5,
         title: "Research New Phone",
         description: "Research and compare the latest smartphone models from different brands. Check out features, prices, and reviews before making a decision."
     },
     {        
+        id: 6,
         title: "Clean House",
         description: "Set aside some time to clean and organize the house. Dust and vacuum the floors, tidy up the rooms, and take out the trash."
     }
@@ -108,7 +116,7 @@ function returnProjectArray() {
 
 function addTask(obj) {
     taskArray.push(obj)
-    addIdToTask()
+    addIdToTask(taskArray)
     // localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
@@ -122,24 +130,30 @@ function addProject(title) {
     console.log(projectArray)
 }
 
-function removeFromArray(id) {
-
-    let indexToRemove = taskArray.findIndex(obj => obj.id === id);
+function removeFromArray(id, array) {
+    let chosenArray;
+    if (array === "tasks") {
+        chosenArray = taskArray
+    }
+    if (array === "notes") {
+        chosenArray = noteArray
+    }
+    let indexToRemove = chosenArray.findIndex(obj => obj.id === id);
     console.log(id)
     // If the object is found in the array, remove it
     if (indexToRemove !== -1) {
-        taskArray.splice(indexToRemove, 1);
+        chosenArray.splice(indexToRemove, 1);
     }
-    addIdToTask()
-    console.log(taskArray)
+    addIdToTask(chosenArray)
+    console.log(chosenArray)
 }
 
 // function setStorageArray(storageArray) {
 //     taskArray = storageArray
 // }
 
-function addIdToTask() {
-    taskArray.forEach(function(obj, index) {
+function addIdToTask(array) {
+    array.forEach(function(obj, index) {
         obj.id = index
     });
 }

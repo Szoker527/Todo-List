@@ -1,11 +1,10 @@
-import { findProjectTitles, removeFromArray } from "./arrays"
+import { findProjectTitles, removeFromArray, notesTasks } from "./arrays"
 import { format } from "date-fns";
 import { addedProjectName } from "./tasks";
 import modalDetail from "../pages/modalDetail";
 import modalEdit from "../pages/modalEdit";
 import { firstLoad } from "./firstLoad";
 import { deleteSelect } from "..";
-
 let currentDisplay = "home"
 
 function displayTasks(array) {
@@ -68,9 +67,8 @@ function displayTasks(array) {
           const child = clonedNodeChildren[i];
           if (child.id.toLowerCase() === 'trash-icon') {
             child.addEventListener('click', function(event) {
-              removeFromArray(obj.id)
+              removeFromArray(obj.id, "tasks")
               firstLoad()
-              
             });
           }
         }
@@ -146,7 +144,13 @@ function displayNotes(array) {
     const noteContaier = document.createElement("div");
     const noteTitle = document.createElement("div")
     const noteDetail = document.createElement("div")
-    
+    const img = document.createElement("img");
+
+    img.setAttribute("src", "../src/assets/images/x.svg");
+    img.setAttribute("alt", "");
+    img.classList.add("close-add");
+    noteContaier.appendChild(img);
+
     noteTitle.textContent = obj.title
     noteDetail.textContent = obj.description
 
@@ -175,6 +179,15 @@ function displayNotes(array) {
       obj.description = newDescription;
     });
 
+    img.addEventListener('click', function(event) {
+      removeFromArray(obj.id, "notes")
+      displayNotes(notesTasks()) 
+    });
+
+  }
+  if (array.length === 0) {
+    nodeContainer.style.display = "grid";
+    emptyPage()
   }
 }
 
