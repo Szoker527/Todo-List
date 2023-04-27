@@ -1,12 +1,7 @@
 import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
-// import { render } from './render'
-// import menu from '../pages/menu'
-// import { defaultProjectName } from './tasks'
-// import home from '../pages/home'
-// import {updateStorage} from '..'
 
-// Here are functions that add objects to arrays, store them and display them on page.
+// Here are functions that add objects to arrays and store them.
 let taskArray = [
     {
         project: "work",
@@ -162,18 +157,6 @@ function findProjectTitles(projectName) {
     return newArray
 }
 
-// function findtaskArray(date) {
-//     const newArray = [];
-//     taskArray.forEach(function(obj) {
-//         const newobjArray = obj.date
-//         if(newobjArray === date) {
-//             newArray.push(obj)
-//         }
-        
-//     });
-//     return newArray
-// }
-
 function displayAllProjectTitles() {
     taskArray.forEach(function(obj) {
         projectArray.push(obj.project)
@@ -221,9 +204,6 @@ function alwaysToday() {
     return formattedToday
 }
 
-// export {addTask, findProjectTitles, findtaskArray,
-//      displayAllProjectTitles, taskArray, nextWeek,
-//      addNote, noteArray, addProject, removeFromArray, setStorageArray}
 export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
      addNote, returnProjectArray, removeFromArray,

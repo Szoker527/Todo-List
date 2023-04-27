@@ -31,9 +31,7 @@ function filterTopic() {
     const uniqueArray = arrayTopic.filter((item, index) => {
         return arrayTopic.indexOf(item) === index;
     });
-    console.log(uniqueArray)
     return uniqueArray
 }
-
 
 export default project

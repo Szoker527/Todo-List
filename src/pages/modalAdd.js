@@ -1,9 +1,6 @@
 import modal from "../styles/modal.css"
-import toDoModal from "./modalPages/toDoModal"
-import projectModal from "./modalPages/projectModal"
-import noteModal from "./modalPages/noteModal"
 import { firstLoadModal } from "../functions/firstLoad"
-import { renderForm, renderModal } from "../functions/render"
+import { renderModal } from "../functions/render"
 import { createTask, createProject, createNotes } from "../functions/tasks"
 import { firstLoad } from "../functions/firstLoad"
 
@@ -14,10 +11,6 @@ function modalAdd() {
     const addToDo = document.getElementById("add-to-do");
     const addProject = document.getElementById("add-project");
     const addNote = document.getElementById("add-note");
-
-    const formToDo = document.getElementById("display-todo")
-    const formProject = document.getElementById("display-project")
-    const formNote = document.getElementById("display-note")
 
     modal.style.display = "flex"
 

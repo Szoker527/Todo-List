@@ -1,12 +1,6 @@
-import { addTask, findProjectTitles, findDateArray, 
-    displayAllProjectTitles, dateArray, nextWeek,
-    removeFromArray } from "./arrays"
-import { inputType, inputBtn, inputImgTrash, inputImgEdit,
-     inputCheckBox, inputDetail } from "./inputs"
+import { findProjectTitles, removeFromArray } from "./arrays"
 import { format } from "date-fns";
 import { addedProjectName } from "./tasks";
-import trash from "../assets/images/trash.svg"
-import edit from "../assets/images/edit.svg"
 import modalDetail from "../pages/modalDetail";
 import modalEdit from "../pages/modalEdit";
 import { firstLoad } from "./firstLoad";
@@ -74,7 +68,7 @@ function displayTasks(array) {
             child.addEventListener('click', function(event) {
               removeFromArray(obj.id)
               firstLoad()
-              console.log(array)
+
             });
           }
         }
@@ -108,7 +102,6 @@ function displayProjects(array) {
       addedProjectName(this.id)
       deleteSelect()
       listItem.classList.add("selected")
-      console.log(`Clicked div with id: ${this.id}`);
     });
 
   }
