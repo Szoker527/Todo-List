@@ -70,20 +70,32 @@ const projectArray = ["work", "relax"]
 
 const noteArray = [
     {        
-        title: "Delete xxx files",
-        description: "ggggggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+        title: "Buy Groceries",
+        description: "Pick up groceries from the supermarket: milk, bread, eggs, butter, cheese, vegetables and fruit."
     },
     {        
-        title: "daaaaaaaaaasdas",
-        description: "xxxxxx"
+        title: "Finish Project",
+        description: "Complete the coding project by the end of the week. Finish writing documentation and run a final test on the program."
     },
     {        
-        title: "tatata",
-        description: "bbbbbb"
+        title: "Call Mom",
+        description: "Give mom a call to catch up on life. Ask her about her day and share some news about your recent activities."
     },
     {        
-        title: "cxzczxczx",
-        description: "dasdasdsssssssssssssssssssssssssssssssssssssssss"
+        title: "Schedule Dentist Appointment",
+        description: "Make an appointment to see the dentist for a check-up and cleaning. Check the calendar for available dates and times."
+    },
+    {        
+        title: "Plan Weekend Getaway",
+        description: "Organize a weekend trip to the beach or mountains. Look up hotels or vacation rentals, make travel arrangements and plan activities."
+    },
+    {        
+        title: "Research New Phone",
+        description: "Research and compare the latest smartphone models from different brands. Check out features, prices, and reviews before making a decision."
+    },
+    {        
+        title: "Clean House",
+        description: "Set aside some time to clean and organize the house. Dust and vacuum the floors, tidy up the rooms, and take out the trash."
     }
 ]
 

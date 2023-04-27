@@ -143,7 +143,7 @@ function toDoForm(parent) {
     const img = document.createElement("img");
     img.setAttribute("src", "../src/assets/images/x.svg");
     img.setAttribute("alt", "");
-    img.classList.add("close");
+    img.classList.add("close-add");
     parent.appendChild(img);
 
     img.addEventListener("click", function(event) {
@@ -196,7 +196,7 @@ function projectForm(parent) {
     const img = document.createElement("img");
     img.setAttribute("src", "../src/assets/images/x.svg");
     img.setAttribute("alt", "");
-    img.classList.add("close");
+    img.classList.add("close-add");
     parent.appendChild(img);
 
     img.addEventListener("click", function(event) {
@@ -257,7 +257,7 @@ function noteForm(parent) {
     const img = document.createElement("img");
     img.setAttribute("src", "../src/assets/images/x.svg");
     img.setAttribute("alt", "");
-    img.classList.add("close");
+    img.classList.add("close-add");
     parent.appendChild(img);
 
     img.addEventListener("click", function(event) {
