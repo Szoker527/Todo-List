@@ -5,6 +5,8 @@ import modalDetail from "../pages/modalDetail";
 import modalEdit from "../pages/modalEdit";
 import { firstLoad } from "./firstLoad";
 import { deleteSelect } from "..";
+import edit from '../assets/images/edit.svg';
+import trash from '../assets/images/trash.svg';
 let currentDisplay = "home"
 
 function displayTasks(array) {
@@ -13,6 +15,25 @@ function displayTasks(array) {
     originalNode.style.display = "grid";
     nodeContainer.style.display = "block"
     
+    // find the img element to replace
+    const editImg = document.querySelector('#edit-icon');
+    const trashImg = document.querySelector('#trash-icon');
+    // create a new svg element
+    const svgEdit = document.createElement('svg');
+    const svgTrash = document.createElement('svg');
+    svgEdit.innerHTML = edit;
+    svgTrash.innerHTML = trash;
+
+    svgEdit.classList.add("icon")
+    svgEdit.id = "edit-icon"
+
+    svgTrash.classList.add("icon")
+    svgTrash.id = "trash-icon"
+
+    // replace the img element with the svg element
+    editImg.parentElement.replaceChild(svgEdit, editImg);
+    trashImg.parentElement.replaceChild(svgTrash, trashImg);
+
     if (document.querySelector(".display-large-note")) {
       nodeContainer.classList.remove("display-large-note")
       nodeContainer.classList.add("display-large")
