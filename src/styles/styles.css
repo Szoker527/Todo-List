@@ -185,6 +185,11 @@ body {
     gap: 8px;
 }
 
+    .empty-title {
+        justify-self: center;
+        font-family: "Ubuntu-Medium", sans-serif;
+    }
+
     .task-container {
         display: grid;
         height: 60px;
