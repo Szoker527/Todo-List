@@ -6,7 +6,7 @@ import { id } from 'date-fns/locale'
 let taskArray = [
     {
         project: "work",
-        title: "What to do",
+        title: "I need to find coffee",
         description: "wdadadadadaada",
         priority: "low",
         date: alwaysToday(),
@@ -46,7 +46,7 @@ let taskArray = [
     },
     {
         project: "work",
-        title: "Bring Boss coffe",
+        title: "Bring Boss coffee",
         description: "gggggg",
         priority: "low",
         date: threeDaysLater(),
