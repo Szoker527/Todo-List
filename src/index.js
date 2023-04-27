@@ -4,7 +4,8 @@ import modalsDetail from "./styles/modalsDetail.css"
 import modalsEdit from "./styles/modalsEdit.css"
 import { firstLoad } from "./functions/firstLoad"
 import { displayTasks, displayNotes } from "./functions/displayTasks"
-import { nextWeek, todayTasks, findProjectTitles, notesTasks } from "./functions/arrays"
+import { nextWeek, todayTasks, findProjectTitles,
+   notesTasks, clearLocalArray } from "./functions/arrays"
 import modalAdd from "./pages/modalAdd"
 import { addedProjectName } from "./functions/tasks"
 
@@ -14,7 +15,9 @@ const today = document.getElementById("today");
 const week = document.getElementById("week");
 const projects = document.querySelectorAll('.project-content');
 const menuButton = document.querySelector(".menu-button");
-const notes = document.getElementById("notes")
+const notes = document.getElementById("notes");
+const resetBtn = document.querySelector(".reset-button");
+console.log(resetBtn)
 
 home.addEventListener("click", function() {
   firstLoad()
@@ -49,6 +52,8 @@ projects.forEach(projectName => {
 menuButton.addEventListener("click", function() {
   modalAdd()
 })
+
+resetBtn.addEventListener("click", clearLocalArray);
 
 function deleteSelect() {
   const liElements = document.querySelectorAll('li');

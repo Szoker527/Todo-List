@@ -62,7 +62,7 @@ let taskArray = [
     }
 ]
 
-const projectArray = ["work", "relax"]
+let projectArray = ["work", "relax"]
 
 let noteArray = [
     {        
@@ -117,26 +117,32 @@ function returnProjectArray() {
 function addTask(obj) {
     taskArray.push(obj)
     addIdToTask(taskArray)
+    saveArrayToLocal(taskArray, "taskArray")
     // localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
 function addNote(obj) {
     noteArray.push(obj)
+    saveArrayToLocal(noteArray, "noteArray")
 }
 
 function addProject(title) {
     const newTitle = title.toLowerCase().replace(/\s+/g, "-");
     projectArray.push(newTitle)
+    saveArrayToLocal(projectArray, "projectArray")
     console.log(projectArray)
 }
 
 function removeFromArray(id, array) {
     let chosenArray;
+    let localName;
     if (array === "tasks") {
         chosenArray = taskArray
+        localName = "taskArray"
     }
     if (array === "notes") {
         chosenArray = noteArray
+        localName = "noteArray"
     }
     let indexToRemove = chosenArray.findIndex(obj => obj.id === id);
     console.log(id)
@@ -145,12 +151,9 @@ function removeFromArray(id, array) {
         chosenArray.splice(indexToRemove, 1);
     }
     addIdToTask(chosenArray)
-    console.log(chosenArray)
+    saveArrayToLocal(chosenArray, localName)
 }
 
-// function setStorageArray(storageArray) {
-//     taskArray = storageArray
-// }
 
 function addIdToTask(array) {
     array.forEach(function(obj, index) {
@@ -218,7 +221,40 @@ function alwaysToday() {
     return formattedToday
 }
 
+function updateArrays(array, name) {
+    if (!array) {
+        return
+    }
+    if(name === "task") {
+        taskArray = array
+    }
+    if(name === "note") {
+        noteArray = array
+    }
+    if(name === "project") {
+        projectArray = array
+    }
+}
+
+function saveArrayToLocal(array, name){
+    const arrayToSave = JSON.stringify(array);
+    localStorage.setItem(`${name}`, arrayToSave);
+}
+
+function returnLocalToArray(arrayName) {
+    const myArrayAsString = localStorage.getItem(`${arrayName}`);
+    console.log(!myArrayAsString, arrayName)
+    const myArray = JSON.parse(myArrayAsString);
+    return myArray
+}
+
+function clearLocalArray() {
+    localStorage.clear();
+    window.location.reload();
+}
+
 export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
      addNote, returnProjectArray, removeFromArray,
-     notesTasks}
+     notesTasks, updateArrays, returnLocalToArray,
+     clearLocalArray}

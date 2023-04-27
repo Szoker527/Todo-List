@@ -1,4 +1,4 @@
-import { returnTaskArray, returnProjectArray } from "./arrays"
+import { returnTaskArray, returnProjectArray, updateArrays, returnLocalToArray } from "./arrays"
 import { displayTasks, displayProjects } from "./displayTasks"
 import { deleteSelect } from ".."
 
@@ -9,6 +9,9 @@ function firstLoad() {
     // console.log(retrievedTasks)
     // setStorageArray(retrievedTasks)
     const home = document.getElementById("home")
+    updateArrays(returnLocalToArray("taskArray"), "task")
+    updateArrays(returnLocalToArray("noteArray"), "note")
+    updateArrays(returnLocalToArray("projectArray"), "project")
     displayTasks(returnTaskArray())
     displayProjects(returnProjectArray())
     deleteSelect()
