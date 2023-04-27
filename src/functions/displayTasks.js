@@ -12,8 +12,6 @@ function displayTasks(array) {
     const originalNode = document.getElementById('original');
     originalNode.style.display = "grid";
     nodeContainer.style.display = "block"
-
-    console.log(array.length === 0)
     
     if (document.querySelector(".display-large-note")) {
       nodeContainer.classList.remove("display-large-note")

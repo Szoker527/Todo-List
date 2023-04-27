@@ -130,7 +130,6 @@ function addProject(title) {
     const newTitle = title.toLowerCase().replace(/\s+/g, "-");
     projectArray.push(newTitle)
     saveArrayToLocal(projectArray, "projectArray")
-    console.log(projectArray)
 }
 
 function removeFromArray(id, array) {
@@ -145,7 +144,6 @@ function removeFromArray(id, array) {
         localName = "noteArray"
     }
     let indexToRemove = chosenArray.findIndex(obj => obj.id === id);
-    console.log(id)
     // If the object is found in the array, remove it
     if (indexToRemove !== -1) {
         chosenArray.splice(indexToRemove, 1);
@@ -163,7 +161,6 @@ function addIdToTask(array) {
 
 function findProjectTitles(projectName) {
     const newstring = projectName.replace(/-/g, ' ')
-    console.log(newstring)
     const newArray = [];
     taskArray.forEach(function(obj) {
         if(obj.project === newstring) {
@@ -243,7 +240,6 @@ function saveArrayToLocal(array, name){
 
 function returnLocalToArray(arrayName) {
     const myArrayAsString = localStorage.getItem(`${arrayName}`);
-    console.log(!myArrayAsString, arrayName)
     const myArray = JSON.parse(myArrayAsString);
     return myArray
 }

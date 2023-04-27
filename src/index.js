@@ -17,7 +17,6 @@ const projects = document.querySelectorAll('.project-content');
 const menuButton = document.querySelector(".menu-button");
 const notes = document.getElementById("notes");
 const resetBtn = document.querySelector(".reset-button");
-console.log(resetBtn)
 
 home.addEventListener("click", function() {
   firstLoad()
@@ -45,7 +44,6 @@ projects.forEach(projectName => {
   projectName.addEventListener('click', function() {
     displayTasks(findProjectTitles(projectName.id))
     addedProjectName(projectName.id)
-    console.log(`Clicked div with id: ${projectName.id}`);
   });
 });
 

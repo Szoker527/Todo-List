@@ -1,4 +1,3 @@
-import modal from "../styles/modal.css"
 import { firstLoadModal } from "../functions/firstLoad"
 import { renderModal } from "../functions/render"
 import { createTask, createProject, createNotes } from "../functions/tasks"
@@ -202,7 +201,6 @@ function projectForm(parent) {
     function onSubmit(event) {
         event.preventDefault();
         const formData = new FormData(form);
-        console.log(formData.get('project-title'))
         createProject(formData.get('project-title'));
         form.reset();
         const modal = document.querySelector(".modal");
@@ -262,7 +260,6 @@ function noteForm(parent) {
     function onSubmit(event) {
         event.preventDefault();
         const formData = new FormData(form);
-        console.log(formData.get('note'), formData.get('note-des'))
         createNotes(formData.get('note'), formData.get('note-des'));
         form.reset();
         const modal = document.querySelector(".modal");
