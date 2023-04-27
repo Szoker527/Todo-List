@@ -1,4 +1,4 @@
-import { findProjectTitles, removeFromArray, notesTasks } from "./arrays"
+import { findProjectTitles, removeFromArray, notesTasks, saveArrayToLocal} from "./arrays"
 import { format } from "date-fns";
 import { addedProjectName } from "./tasks";
 import modalDetail from "../pages/modalDetail";
@@ -191,16 +191,19 @@ function displayNotes(array) {
     noteTitle.addEventListener("blur", (event) => {
       const newTitle = event.target.textContent;
       obj.title = newTitle;
+      saveArrayToLocal(notesTasks(), "noteArray")
     });
 
     noteDetail.addEventListener("blur", (event) => {
       const newDescription = event.target.textContent;
       obj.description = newDescription;
+      saveArrayToLocal(notesTasks(), "noteArray")
     });
 
     img.addEventListener('click', function(event) {
       removeFromArray(obj.id, "notes")
       displayNotes(notesTasks()) 
+      saveArrayToLocal(notesTasks(), "noteArray")
     });
 
   }

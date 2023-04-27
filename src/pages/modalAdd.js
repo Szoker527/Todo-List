@@ -2,6 +2,7 @@ import { firstLoadModal } from "../functions/firstLoad"
 import { renderModal } from "../functions/render"
 import { createTask, createProject, createNotes } from "../functions/tasks"
 import { firstLoad } from "../functions/firstLoad"
+import x from '../assets/images/x.svg';
 
 function modalAdd() {
     const modal = document.querySelector(".modal")
@@ -132,9 +133,8 @@ function toDoForm(parent) {
 
     parent.appendChild(form);
 
-    const img = document.createElement("img");
-    img.setAttribute("src", "../src/assets/images/x.svg");
-    img.setAttribute("alt", "");
+    const img = document.createElement("svg");
+    img.innerHTML = x;
     img.classList.add("close-add");
     parent.appendChild(img);
 
@@ -185,9 +185,8 @@ function projectForm(parent) {
 
     parent.appendChild(form);
 
-    const img = document.createElement("img");
-    img.setAttribute("src", "../src/assets/images/x.svg");
-    img.setAttribute("alt", "");
+    const img = document.createElement("svg");
+    img.innerHTML = x;
     img.classList.add("close-add");
     parent.appendChild(img);
 
@@ -245,9 +244,8 @@ function noteForm(parent) {
 
     parent.appendChild(form);
 
-    const img = document.createElement("img");
-    img.setAttribute("src", "../src/assets/images/x.svg");
-    img.setAttribute("alt", "");
+    const img = document.createElement("svg");
+    img.innerHTML = x;
     img.classList.add("close-add");
     parent.appendChild(img);
 

@@ -253,4 +253,4 @@ export {returnTaskArray, nextWeek, todayTasks,
      findProjectTitles, addTask, addProject,
      addNote, returnProjectArray, removeFromArray,
      notesTasks, updateArrays, returnLocalToArray,
-     clearLocalArray}
+     clearLocalArray, saveArrayToLocal}

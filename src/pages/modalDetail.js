@@ -1,3 +1,5 @@
+import x from '../assets/images/x.svg';
+
 function modalDetail(obj) {
     const modal = document.querySelector(".modal-detail")
     modal.style.display = "grid"
@@ -24,9 +26,8 @@ function modalDetail(obj) {
         images[i].parentNode.removeChild(images[i]);
     }
     
-    const img = document.createElement("img");
-    img.setAttribute("src", "../src/assets/images/x.svg");
-    img.setAttribute("alt", "");
+    const img = document.createElement("svg");
+    img.innerHTML = x;
     img.classList.add("close");
     parentElement.appendChild(img);
     

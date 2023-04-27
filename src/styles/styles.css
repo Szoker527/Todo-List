@@ -347,18 +347,20 @@ textarea:focus {
 .close {
     position: absolute;
     right: 0;
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
     padding-right: 10px;
+    width: 40px;
 }
 
 .close-add {
+    width: 40px;
     position: absolute;
     top: 9px;
     right: 0;
-    color: #aaa;
+    color: var(--bg-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -559,7 +561,7 @@ textarea:focus {
         .icon:hover {
             color: var(--text-color);
         }
-        
+
     .menu-button {
         display: flex;
         justify-content: center;

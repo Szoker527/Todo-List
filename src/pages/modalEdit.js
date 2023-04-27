@@ -1,5 +1,6 @@
 import { firstLoad } from "../functions/firstLoad"
-
+import x from '../assets/images/x.svg';
+import { saveArrayToLocal, returnTaskArray } from "../functions/arrays";
 function modalEdit(obj) {
     const modal = document.querySelector(".modal-edit")
     const form = document.getElementById("display-edit")
@@ -13,12 +14,6 @@ function modalEdit(obj) {
     editDate.value = obj.date
     editRadio.checked = true;
     
-    const close = document.querySelector(".close")
-    close.addEventListener("click", function(event) {
-        form.removeEventListener('submit', onSubmit, true);
-        modal.style.display = "none";
-    })
-
     function onSubmit(event) {
         event.preventDefault();
         const formData = new FormData(form);
@@ -29,11 +24,25 @@ function modalEdit(obj) {
         obj.priority = selectedPriority
         form.reset();
         modal.style.display = "none";
+        saveArrayToLocal(returnTaskArray(), "taskArray")
         firstLoad();
         form.removeEventListener('submit', onSubmit, true);
-     }
- 
-     form.addEventListener('submit', onSubmit, true);
+        console.log(obj)
+    }
+    
+    form.addEventListener('submit', onSubmit, true);
+
+
+    const closeImg = document.querySelector(".close")
+    const svgClose = document.createElement('svg');
+    svgClose.innerHTML = x;
+    svgClose.classList.add("close")
+    closeImg.parentElement.replaceChild(svgClose, closeImg);
+    
+    svgClose.addEventListener("click", function(event) {
+        form.removeEventListener('submit', onSubmit, true);
+        modal.style.display = "none";
+    })
 }
 
 export default modalEdit
