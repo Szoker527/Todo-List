@@ -1,14 +1,13 @@
 function renderModal() {
-  const main = document.querySelector(".main-small")
-  const dispalyContainer = document.getElementById("display-modal")
+  const main = document.querySelector(".main-small");
+  const dispalyContainer = document.getElementById("display-modal");
   if (!dispalyContainer) {
-    return
+    return;
   }
   while (dispalyContainer.firstChild) {
     dispalyContainer.removeChild(dispalyContainer.firstChild);
-    }
-    main.removeChild(dispalyContainer)
+  }
+  main.removeChild(dispalyContainer);
 }
 
-
-export { renderModal }
+export { renderModal };
