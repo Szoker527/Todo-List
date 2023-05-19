@@ -1,3 +1,4 @@
+// nie uzywane importy trzeba wyrzucić
 import {
   addTask,
   findProjectTitles,
@@ -12,37 +13,42 @@ import {
 
 let currentProjectName = "work";
 
-class tasks {
+// nazwy klas zawsze zaczynaj z dużej litery
+// w tym przypadku to jest pojedyńczy obiekt, więc zamiast Tasks jest to Task
+class Task {
   constructor(project, title, description, priority, date) {
-    (this.project = project),
-      (this.title = title),
-      (this.description = description),
-      (this.priority = priority),
-      (this.date = date);
+    // okrągłe nazwiasy nie są potrzebna
+      this.project = project;
+      this.title = title;
+      this.description = description;
+      this.priority = priority;
+      this.date = date;
   }
 }
 
-class notes {
+class Note {
   constructor(title, description) {
-    (this.title = title), (this.description = description);
+    this.title = title;
+    this.description = description;
   }
 }
 
 function createTask(date, title, description, priority) {
-  const projectNameObj = currentProjectName;
-  const newObj = new tasks(
-    projectNameObj.toLowerCase(),
+  // nie trzeba tworzyć nowego obiektu, funkcja toLowerCase tworzy nowy obiekt samoistnie
+  // więc można tego użyć tak jak tu podałem
+  const task = new Task(
+    currentProjectName.toLowerCase(),
     title,
     description,
     priority,
     date
   );
-  addTask(newObj);
-  nextWeek();
+  addTask(task);
+  getTasksFromNextDays(7);
 }
 
 function createNotes(title, description) {
-  const newNote = new notes(title, description);
+  const newNote = new Note(title, description);
   addNote(newNote);
 }
 

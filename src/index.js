@@ -58,12 +58,24 @@ menuButton.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", clearLocalArray);
 
+// zamiast używać po kliknięciu w któregoś z tabów:
+// deleteSelect()
+// element.classList.add("selected");
+// można używać funkcji poniżej
+function changeSelection(tab) {
+  deleteSelect();
+  tab.classList.add("selected");
+}
+
 function deleteSelect() {
   const liElements = document.querySelectorAll("li");
 
+  // zamiast pętli, można znaleźć element z klasą .selected i usunąć tą klasę
   for (let i = 0; i < liElements.length; i++) {
     liElements[i].classList.remove("selected");
   }
 }
 
+// zamiast tutaj eksportować, można bezpośrednio dodać export przed funkcją:
+// export deleteSelect
 export { deleteSelect };

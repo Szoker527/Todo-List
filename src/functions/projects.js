@@ -1,6 +1,8 @@
-import { displayAllProjectTitles } from "./arrays";
+import { displayAllProjectTitles as getAllProjectTitles } from "./arrays";
 
-function project() {
+// po nazwie nie wiadomo co ta funkcja robi
+// ale domyslam się, że wyswietla projekty w lewym menu
+function displayProjectsInMenu() {
   const leftMenu = document.querySelector(".left-menu");
   const projectContainer = document.createElement("div");
   const projectTitle = document.createElement("span");
@@ -12,7 +14,7 @@ function project() {
   projectContainer.appendChild(projectTitle);
   leftMenu.appendChild(projectContainer);
 
-  const projectTopics = filterTopic();
+  const projectTopics = filterTopics();
 
   for (let i = 0; i < projectTopics.length; i++) {
     const elementText = projectTopics[i];
@@ -26,13 +28,10 @@ function project() {
   }
 }
 
-function filterTopic() {
-  const arrayTopic = displayAllProjectTitles();
-
-  const uniqueArray = arrayTopic.filter(
-    (item, index) => arrayTopic.indexOf(item) === index
+function filterTopics() {
+  return getAllProjectTitles().filter(
+    (item, index) => topics.indexOf(item) === index
   );
-  return uniqueArray;
 }
 
-export default project;
+export default displayProjectsInMenu;
