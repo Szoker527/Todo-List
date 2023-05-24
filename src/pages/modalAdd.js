@@ -1,6 +1,9 @@
 import { firstLoadModal, firstLoad } from "../functions/firstLoad";
 import { renderModal } from "../functions/render";
 import { createTask, createProject, createNotes } from "../functions/tasks";
+// x niby pasuje, ale w kodzie moze byc nie zrozumiałe,
+// bardziej nazwa pasuje na "closeImg", "removeImg", "deleteImg"
+// zalezy w jakim celu uzywany jest ten obrazek
 import x from "../assets/images/x.svg";
 
 function modalAdd() {
@@ -33,6 +36,8 @@ function modalAdd() {
   });
 }
 
+// funkcję trzeba rozbić na wiele mniejszych i je sparametryzować, jest zdecydowanie za długa
+// generalnie dobrze wyglądające funkcje mają max do 30 linijek (chyba, że nie ma innej możliwości)
 function toDoForm(parent) {
   const form = document.createElement("form");
   form.classList.add("display", "display-todo");
@@ -166,6 +171,7 @@ function toDoForm(parent) {
   form.addEventListener("submit", onSubmit, true);
 }
 
+// taki sam komentarz jak do wczesniejszej funkcji
 function projectForm(parent) {
   const form = document.createElement("form");
   form.classList.add("display", "display-project");
@@ -215,7 +221,7 @@ function projectForm(parent) {
 
   form.addEventListener("submit", onSubmit, true);
 }
-
+// taki sam komentarz jak do wczesniejszej funkcji
 function noteForm(parent) {
   const form = document.createElement("form");
   form.classList.add("display", "display-note");
